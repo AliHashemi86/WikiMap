@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+ <html lang="en">
+
+ <head>
+   <title>New Map Page</title>
+
+   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+   crossorigin=""/>
+
+   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+   <script type="text/javascript" src="/scripts/app.js"></script>
+   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+   crossorigin=""></script>
+
+ </head>
+
+ <body>
+   <h1>Create Map</h1>
+   <div style ="height: 900px;" id="new-map">
+   </div>
+ </body>
+
+ </html>
+ <script>
+  const map = L.map('new-map').setView([51.505, -0.09], 13);
+  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+</script>

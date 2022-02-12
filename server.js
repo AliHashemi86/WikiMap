@@ -41,6 +41,7 @@ const categoriesRoutes = require("./routes/categories");
 const mapsRoutes = require("./routes/maps");
 const registerRoutes = require("./routes/register");
 const loginRoutes = require("./routes/login");
+const new_mapRoutes = require("./routes/new_map");
 
 
 // Mount all resource routes
@@ -51,6 +52,7 @@ app.use("/categories", categoriesRoutes(db));
 app.use("/maps", mapsRoutes(db));
 app.use("/register", registerRoutes(db));
 app.use("/login", loginRoutes(db));
+app.use("/new_map", new_mapRoutes(db));
 
 
 

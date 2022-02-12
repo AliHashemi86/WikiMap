@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Home Page</title>
+  <title>New Map Page</title>
 
   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
@@ -14,14 +14,7 @@
 </head>
 
 <body>
-  <h1>THIS IS HOME PAGE</h1>
+  <h1>Create Map</h1>
 </body>
 
 </html>
-
-
-
-
-
-
-

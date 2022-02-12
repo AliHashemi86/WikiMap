@@ -1,8 +1,9 @@
 body {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: flex-start;
+  align-items: top;
   min-height: 100vh;
+  flex-direction: row;
 
   background: rgb(163, 208, 219);
   background: linear-gradient(

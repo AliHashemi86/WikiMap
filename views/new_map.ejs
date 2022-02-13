@@ -36,4 +36,14 @@
   L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
 }).addTo(map);
+
+  const marker = L.marker([51.5, -0.09], {
+    draggable: true,
+    title: "Pick a location"
+  }).addTo(map)
+  .bindPopup(`<h1>This is title</h1>
+  <img style="height: 100px" src="https://i.pinimg.com/474x/61/52/60/615260a333b8a6f00ff2cc8e5713e9e2.jpg">
+  <p>This is description</p>`)
+  .openPopup()
+
 </script>

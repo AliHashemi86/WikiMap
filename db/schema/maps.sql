@@ -1,0 +1,11 @@
+DROP TABLE IF EXISTS maps CASCADE;
+
+CREATE TABLE maps(
+  id SERIAL PRIMARY KEY NOT NULL,
+  user_id INTEGER REFERENCES users.id ON DELETE CASCADE,
+  titles VARCHAR(255) NOT NULL,
+  description text,
+  imege VARBINARY(255),
+  location VARCHAR(255) NOT NULL,
+  created_at DATE
+)

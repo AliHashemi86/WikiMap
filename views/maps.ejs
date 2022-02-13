@@ -1,24 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Maps Page</title>
 
-<head>
-  <title>Maps Page</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+  </head>
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-</head>
-
-<body>
-  <%- include('partials/_header')%>
-  <h1>Maps</h1>
-  <footer>
-    <%- include('partials/_footer')%>
-  </footer>
+  <body>
+    <header><%- include('partials/_header')%></header>
+      <main>
+        <!-- Map Details Section -->
+        <section>
+          <div>
+            <img src="" alt="Map Image" />
+          </div>
+          <div>
+            <div>h1>Location Title</h1></div>
+            <div><h5>Address Details</h5></div>
+            <div><h5>Contact Details</h5></div>
+            <div><h3>Description of restaurant</h3></div>
+            <div><button> OPEN IN MAPS </button></div>
+          </div>
+      </section>
+        <!-- Map Section -->
+      <section>
+        <div>
+          <span>INSERT API LINK HERE???</span>
+        </div>
+      </section>
+    </main>
+  <footer><%- include('partials/_footer')%></footer>
 </body>
-
 </html>

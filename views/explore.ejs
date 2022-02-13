@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Explore</title>
+
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+  </head>
+
+  <body>
+    <header><%- include('partials/_header')%></header>
+    <main>
+      <!-- ***** Select Container Start ***** -->
+      <!-- Select Container -->
+      <section>
+        <div>
+          <div>
+            <h1>Explore</h1>
+          </div>
+          <div>
+            <img src="/" alt="Splash Image" />
+          </div>
+        </div>
+        <div>
+          <form action="#">
+            <select name="Categories" id="categories">
+              <option value="Restaurant">Restaurants</option>
+              <option value="Exercise">Exercise</option>
+              <option value="Venues">Venues</option>
+              <option value="Other">Other</option>
+            </select>
+            <input type="submit" value="Submit" />
+          </form>
+        </div>
+      </section>
+      <!-- ***** Select Container Finish ***** -->
+
+      <!-- ***** Results Container Start ***** -->
+      <!-- Results Container -->
+      <section>
+        <!-- Outer Results Container -->
+        <div>
+          <!-- Inner Results Container -->
+          <div>
+            <a href="#">
+              <img src="" alt="Map Photo" />
+              <h2>Map Description</h2>
+            </a>
+          </div>
+        </div>
+      </section>
+      <!-- ***** Results Container Finish ***** -->
+    </main>
+    <footer><%- include('partials/_footer')%></footer>
+  </body>
+</html>

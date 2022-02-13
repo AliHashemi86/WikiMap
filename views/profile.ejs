@@ -1,24 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Profile Page</title>
 
-<head>
-  <title>Profile Page</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+  </head>
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-</head>
+  <body>
+    <!-- header start -->
+    <header><%- include('partials/_header')%></header>
+    <!-- header end -->
+    <main>
+      <!-- Side Nav -->
+      <div>
+        <nav>
+          <div>
+            <ul>
+              <div>
+                <li>
+                  <a href="#"> Profile</a>
+                </li>
+              </div>
+              <div>
+                <li>
+                  <a href="#"> My Maps</a>
+                </li>
+              </div>
+              <div>
+                <li>
+                  <a href="#"> Logout</a>
+                </li>
+              </div>
+            </ul>
+          </div>
+        </nav>
+      </div>
+        <!-- Profile Information -->
+          <section>
+              <div>
+                <img src="profile photo" alt="" />
+              </div>
+              <div>
+                <h2>Name</h2>
+                <h3>Username</h3>
+                <h3>Email</h3>
+                <h3>Password</h3>
+              </div>
+              <div>
+                <button type="button">Edit</button>
+              </div>
+              <div>
+                <h3>Edit Profile</h3>
+              </div>
+            </div>
+          </section>
+                <!-- Edit Profile Input *** Do we want this?
+                *** Do we have to have a new page?-->
+              <section>
+                <div>
+                  <input type="text" placeholder="First Name" value="*" />
+                  <input type="text" placeholder="Last Name" value="*" />
+                </div>
+                <div>
+                  <input type="text" placeholder="Username" value="*" />
+                </div>
+                <div>
+                  <input type="text" placeholder="Email" value="*" />
+                </div>
+                <div>
+                  <input type="text" placeholder="Password" value="*" />
+                </div>
+                <div>
+                  <button type="button">Save</button>
+                </div>
+              </section>
+            </div>
 
-<body>
-  <%- include('partials/_header')%>
-  <h1>Profile</h1>
-  <footer>
-    <%- include('partials/_footer')%>
-  </footer>
-</body>
+        <!-- Favorites Section -->
+        <section>
+          <!-- Container - Outer Box -->
+          <div>
+            <!-- Container - Inner Box -->
+            <div>
+              <a href="">MapName</a>
+              <img src="/" alt="Map Thumbnail">
+            </div>
+          </div>
+        </section>
+    </main>
 
+    <!-- footer start -->
+    <footer><%- include('partials/_footer')%></footer>
+    <!-- footer end -->
+  </body>
 </html>

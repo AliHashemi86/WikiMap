@@ -1,44 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <title>Home Page</title>
 
-<head>
-  <title>Home Page</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
 
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-  <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/register.js"></script>
+  </head>
 
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <script type="text/javascript" src="/scripts/register.js"></script>
+  <body>
+    <!-- header partial -->
+    <header><%- include('partials/_header')%></header>
+    <main>
+      <!-- **** Featured Maps Section Begins ****  -->
 
-</head>
+      <!-- Featured Map 1 -->
+      <section>
+        <div>
+          <article>
+            <li>
+              <a href="/map link"></a>
+              <h1>Map 1</h1>
+              <p>Text description about map 1</p>
+              <img src="/" alt="Map 1" />
+            </li>
+          </article>
+        </div>
+        <!-- Featured Map 2 -->
+        <div>
+          <article>
+            <li>
+              <a href="/map2"></a>
+              <h1>Map 2</h1>
+              <p>Text description about map 2</p>
+              <img src="/" alt="Map 2" />
+            </li>
+            <!-- Fun circle call to action button -->
+            <div>
+              <li>
+                <span
+                  ><h2>Register Now!</h2>
+                  <img src="/circle" alt="circle" />
+                </span>
+              </li>
+            </div>
+          </article>
+        </div>
+        <div>
+          <!-- Featured Map 3 -->
+          <article>
+            <li>
+              <a href="/map3"></a>
+              <h1>Map 3</h1>
+              <p>Text description about map 3</p>
+              <img src="/" alt="Map 3" />
+            </li>
+          </article>
+        </div>
+      </section>
+      <!-- **** Featured Maps Section Ends **** -->
 
-<body>
-  <%- include('partials/_header')%>
-  <main class="features">
-<!-- features section(With images of topic) -->
-  <section><img src=""></section>
-  <section><img src=""></section>
-  <section><img src=""></section>
-  <a href="new_map">
-  <button class="create">Create Map</button>
-  </a>
+      <!-- **** MapApp Features/CTA Section Begins ****  -->
 
-<!-- tell us about(feature 1/2) -->
-  <article><img src="">
-    tell us about(feature 1)
-  </article>
+      <!-- MapApp Features, Section 1/2  -->
+      <section>
+        <div>
+          <article>
+            <div>
+              <h1>Feature 1</h1>
+              <h4>Subheader of F1</h4>
+              <p>Description of F1</p>
+            </div>
+            <div>
+              <img src="/" alt="Cool illustration of F1" />
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- MapApp Features, Section 2/2  -->
+      <section>
+        <div>
+          <article>
+            <div>
+              <h1>Feature 2</h1>
+              <h4>Subheader of F2</h4>
+              <p>Description of F2</p>
+            </div>
+            <div>
+              <img src="/" alt="Cool illustration of F2" />
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- MapApp Call To Action -->
+      <section>
+        <div>
+          <article>
+            <div>
+              <h1>CTA</h1>
+              <h4>Subheader of CTA</h4>
+              <p>Description of CTA</p>
+              <button>CTA</button>
+            </div>
+          </article>
+        </div>
+      </section>
+      <!-- **** MapApp Feature Section Ends **** -->
 
-  <article><img src="">
-    tell us about(feature 2)
-  </article>
-
-  </main>
-  <footer>
-    <%- include('partials/_footer')%>
-  </footer>
-</body>
-
+      <!-- Footer partial -->
+      <footer><%- include('partials/_footer')%></footer>
+    </main>
+  </body>
 </html>

@@ -1,66 +1,96 @@
 <!DOCTYPE html>
- <html lang="en">
+<html lang="en">
+  <head>
+    <title>New Map Page</title>
 
- <head>
-   <title>New Map Page</title>
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/main.css" type="text/css" />
+    <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
 
-   <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-   <link rel="stylesheet" href="/styles/main.css" type="text/css" />
-   <link rel="stylesheet" href="/styles/layout.css" type="text/css" />
-   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-   integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-   crossorigin=""/>
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+  </head>
 
-   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-   <script type="text/javascript" src="/scripts/app.js"></script>
-   <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-   integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-   crossorigin=""></script>
-
- </head>
-
- <body>
-  <%- include('partials/_header')%>
-   <h1>Create Map</h1>
-   <div style ="height: 900px;" id="new-map">
-   </div>
-   <footer>
-    <%- include('partials/_footer')%>
-  </footer>
- </body>
-
- </html>
- <script>
-   //Map section holds the tiles and container of the map
-  const map = L.map('new-map').setView([51.505, -0.09], 13);
-  L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
+  <body>
+    <%- include('partials/_header')%>
+    <h1>Create Map</h1>
+    <div style="height: 900px" id="new-map"></div>
+    <footer><%- include('partials/_footer')%></footer>
+  </body>
+</html>
+<script>
+  //Map section holds the tiles and container of the map
+  const map = L.map("new-map").setView([51.505, -0.09], 13);
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  }).addTo(map);
 
   //Click event that triggers MapClick function
-  map.on('click', onMapClick);
+  map.on("click", onMapClick);
 
   //Marker variable that uses leaflets library to create a marker at a chosen location
   const marker = L.marker([51.5, -0.09], {
     draggable: true,
-    title: "Pick a location"
-  }).addTo(map)
-  .bindPopup(`<h1>This is title</h1>
+    title: "Pick a location",
+  })
+    .addTo(map)
+    .bindPopup(
+      `<h1>This is title</h1>
   <img style="height: 100px" src="https://i.pinimg.com/474x/61/52/60/615260a333b8a6f00ff2cc8e5713e9e2.jpg">
-  <p>This is description</p>`)
-  .openPopup()
+  <p>This is description</p>`
+    )
+    .openPopup();
 
   //Function that creates markers at whatever location the user clicks on
   function onMapClick(e) {
     const marker = L.marker(e.latlng, {
       draggable: true,
-    }).addTo(map)
-    .bindPopup(`<h1>This is title</h1>
+    })
+      .addTo(map)
+      .bindPopup(
+        `<h1>This is title</h1>
   <img style="height: 100px" src="">
-  <p>This is description</p>`)
-  .openPopup()
-  console.log(marker)
-}
-//testing
+  <p>This is description</p>`
+      )
+      .openPopup();
+    console.log(marker);
+  }
+  //testing
 </script>
+
+<!--
+  Features:
+
+  1. Map Editing
+    1 - Create Map
+      a - Name Map
+      b - Describe Map
+      c - Image for Map?
+    2 - Edit Map
+      a - Add location
+      b - Delete location
+    3 - Delete Map
+
+  2. Specific Locations Within Map List
+    1 - Image of Location
+    2 - Location Address
+      a - Image of specific location
+      b - Country
+      c - City
+      d - Address
+    3 - Location Description
+
+ -->

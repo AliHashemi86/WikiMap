@@ -44,7 +44,6 @@ const loginRoutes = require("./routes/login");
 const new_mapRoutes = require("./routes/new_map");
 const profileRoutes = require("./routes/profile");
 
-
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
 app.use("/api/users", usersRoutes(db));
@@ -56,8 +55,6 @@ app.use("/login", loginRoutes(db));
 app.use("/new_map", new_mapRoutes(db));
 app.use("/profile", profileRoutes(db));
 
-
-
 // Note: mount other resources here, using the same pattern above
 
 // Home page
@@ -67,7 +64,6 @@ app.use("/profile", profileRoutes(db));
 app.get("/", (req, res) => {
   res.render("index");
 });
-
 
 app.listen(PORT, () => {
   console.log(`Example app listening on port ${PORT}`);

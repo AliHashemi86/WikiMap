@@ -1,20 +1,16 @@
 .featured-maps {
   display: flex;
   align-items: stretch;
-  // justify-content: space-between;
-  // list-style: none;
   width: 100vw;
   height: 30em;
   background-color: beige;
 
   .feature-map-1 {
     flex: 0 0 49vw;
-    // display: flex;
-    // list-style: none;
-    // order: 1;
-    // height: 100%;
-    // width: 30%;
-    background-color: lightskyblue;
+    display: flex;
+    list-style: none;
+    background-color: rgb(242, 250, 209);
+    z-index: 1;
   }
 
   .feature-row {
@@ -31,18 +27,8 @@
     order: 2;
     height: 100%;
     width: 100%;
-    background-color: rgb(236, 217, 225);
+    background-color: rgb(247, 239, 242);
   }
-
-  #circle {
-    // display: flex;
-    list-style: none;
-    order: 3;
-    position: absolute;
-    max-width: 200px;
-    max-height: 200px;
-  }
-
   .feature-map-3 {
     display: flex;
     // flex-direction: row;
@@ -50,7 +36,7 @@
     order: 4;
     height: 100%;
     width: 100%;
-    background-color: rgb(186, 197, 169);
+    background-color: rgb(226, 231, 218);
   }
 }
 
@@ -58,19 +44,44 @@
   display: flex;
   width: 100%;
   height: 20em;
-  background-color: lightblue;
+
+  .feature-text {
+    display: flex;
+    width: 50vw;
+    justify-content: space-between;
+    background-color: rgb(206, 221, 226);
+  }
+
+  .feature-img {
+    display: flex;
+    width: 50vw;
+    background-color: rgb(203, 202, 202);
+  }
 }
 
 .mapapp-feature2 {
   display: flex;
   width: 100%;
   height: 20em;
-  background-color: lightcoral;
+  background-color: rgb(241, 204, 236);
+
+  .feature-text {
+    display: flex;
+    width: 50vw;
+    background-color: rgb(203, 202, 202);
+  }
+
+  .feature-img {
+    display: flex;
+    width: 50vw;
+    background-color: rgb(240, 203, 212);
+  }
 }
 
 .c2a {
   display: flex;
+  justify-content: center;
   width: 100%;
   height: 20em;
-  background-color: lightpink;
+  background-color: rgb(189, 182, 182);
 }

@@ -23,3 +23,17 @@
     color: white;
   }
 }
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  align-items: center;
+  background-color: $background;
+  #logo {
+    display: flex;
+    max-height: 110px;
+    align-items: center;
+    max-width: 110px;
+  }
+}

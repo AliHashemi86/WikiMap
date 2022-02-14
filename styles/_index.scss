@@ -1,8 +1,43 @@
-.featured_maps {
+.featured-maps {
   display: flex;
+  justify-content: space-between;
+  list-style: none;
   width: 100%;
   height: 30em;
   background-color: beige;
+
+  .feature-map-1 {
+    display: flex;
+    list-style: none;
+    order: 1;
+    height: 100%;
+    background-color: lightskyblue;
+  }
+
+  .feature-map-2 {
+    display: flex;
+    list-style: none;
+    order: 2;
+    height: 100%;
+    background-color: rgb(236, 217, 225);
+  }
+
+  #circle {
+    display: flex;
+    list-style: none;
+    order: 3;
+    position: absolute;
+    max-width: 200px;
+    max-height: 200px;
+  }
+
+  .feature-map-3 {
+    display: flex;
+    list-style: none;
+    order: 4;
+    height: 100%;
+    background-color: rgb(186, 197, 169);
+  }
 }
 
 .mapapp-feature1 {

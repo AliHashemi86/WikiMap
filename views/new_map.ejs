@@ -28,13 +28,14 @@
     <h1>Create Map</h1>
     <section>
       <form action="/new_map" method="post" >
-        <input placeholder="title">
-        <input placeholder="image URL">
-        <input placeholder="description">
-        <input placeholder="location">
-          <button type="submit">Sumbit</button>
+        <input name="title" placeholder="title">
+        <input name="image" placeholder="image URL">
+        <input name="description" placeholder="description">
+        <input name="location" placeholder="location">
+        <button type="submit">Sumbit</button>
         </div>
       </form>
+    </section>
     </section>
     <div style="height: 900px" id="new-map"></div>
     <footer><%- include('partials/_footer')%></footer>

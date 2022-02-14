@@ -1,0 +1,24 @@
+@import "./variables";
+
+.top-nav {
+  display: flex;
+  justify-content: space-between;
+  height: 5em;
+  align-items: center;
+  background-color: $background;
+  #logo {
+    display: flex;
+    max-height: 110px;
+    max-width: 110px;
+  }
+  .nav-links {
+    list-style: none;
+    display: flex;
+  }
+  .nav-item a {
+    display: flex;
+    padding: 10px 15px;
+    text-decoration: none;
+    color: white;
+  }
+}

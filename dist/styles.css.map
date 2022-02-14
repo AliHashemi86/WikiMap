@@ -1,9 +1,10 @@
 {
     "version": 3,
-    "mappings": "AMAA,AAAA,GAAG,CAAC;EACF,gBAAgB,EAAE,UAAU;CAC7B",
+    "mappings": "ACEA,AAAA,QAAQ,CAAC;EACP,OAAO,EAAE,IAAI;EACb,eAAe,EAAE,aAAa;EAC9B,OAAO,EAAE,KAAK;EACd,WAAW,EAAE,MAAM;EACnB,gBAAgB,ECDL,OAAkB;CDY9B;;AAhBD,AAME,QANM,CAMN,UAAU,CAAC;EACT,UAAU,EAAE,IAAI;EAChB,OAAO,EAAE,IAAI;CACd;;AATH,AAUE,QAVM,CAUN,SAAS,CAAC,CAAC,CAAC;EACV,OAAO,EAAE,IAAI;EACb,OAAO,EAAE,SAAS;EAClB,eAAe,EAAE,IAAI;EACrB,KAAK,EAAE,KAAK;CACb",
     "sources": [
         "../styles/styles.scss",
         "../styles/_header_footer.scss",
+        "../styles/_variables.scss",
         "../styles/_index.scss",
         "../styles/_login_register.scss",
         "../styles/_maps.scss",

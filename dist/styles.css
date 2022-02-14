@@ -43,25 +43,35 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  list-style: none;
-  width: 100%;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  width: 100vw;
   height: 30em;
   background-color: beige;
 }
 
 .featured-maps .feature-map-1 {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 49vw;
+          flex: 0 0 49vw;
+  background-color: lightskyblue;
+}
+
+.featured-maps .feature-row {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style: none;
-  -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-          order: 1;
-  height: 100%;
-  background-color: lightskyblue;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 49vw;
+          flex: 0 0 49vw;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
 }
 
 .featured-maps .feature-map-2 {
@@ -73,13 +83,11 @@
       -ms-flex-order: 2;
           order: 2;
   height: 100%;
+  width: 100%;
   background-color: #ecd9e1;
 }
 
 .featured-maps #circle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   list-style: none;
   -webkit-box-ordinal-group: 4;
       -ms-flex-order: 3;
@@ -98,6 +106,7 @@
       -ms-flex-order: 4;
           order: 4;
   height: 100%;
+  width: 100%;
   background-color: #bac5a9;
 }
 

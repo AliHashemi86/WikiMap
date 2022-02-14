@@ -1,29 +1,41 @@
 .featured-maps {
   display: flex;
-  justify-content: space-between;
-  list-style: none;
-  width: 100%;
+  align-items: stretch;
+  // justify-content: space-between;
+  // list-style: none;
+  width: 100vw;
   height: 30em;
   background-color: beige;
 
   .feature-map-1 {
-    display: flex;
-    list-style: none;
-    order: 1;
-    height: 100%;
+    flex: 0 0 49vw;
+    // display: flex;
+    // list-style: none;
+    // order: 1;
+    // height: 100%;
+    // width: 30%;
     background-color: lightskyblue;
+  }
+
+  .feature-row {
+    display: flex;
+    flex: 0 0 49vw;
+    flex-direction: column;
+    flex-grow: 1;
   }
 
   .feature-map-2 {
     display: flex;
+    // flex-direction: row;
     list-style: none;
     order: 2;
     height: 100%;
+    width: 100%;
     background-color: rgb(236, 217, 225);
   }
 
   #circle {
-    display: flex;
+    // display: flex;
     list-style: none;
     order: 3;
     position: absolute;
@@ -33,9 +45,11 @@
 
   .feature-map-3 {
     display: flex;
+    // flex-direction: row;
     list-style: none;
     order: 4;
     height: 100%;
+    width: 100%;
     background-color: rgb(186, 197, 169);
   }
 }

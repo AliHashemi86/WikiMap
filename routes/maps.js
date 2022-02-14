@@ -8,8 +8,8 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
     const queryString = `
-    INSERT INTO maps (user_id, title , description, image, location, created_at)
-    VALUES ($1, $2, $3, $4, $5, $6)
+    INSERT INTO maps (title , description, image, latitude, longitude)
+    VALUES ($1, $2, $3, $4, $5)
     RETURNING *`
     ;
     const maps = req.body;
@@ -18,8 +18,8 @@ module.exports = (db) => {
       maps.title ,
       maps.description,
       maps.image,
-      maps.location,
-      maps.created_at
+      maps.latitude,
+      maps.longitude,
     ];
     return db.query(queryString, queryParams)
 

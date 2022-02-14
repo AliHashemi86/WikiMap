@@ -9,22 +9,24 @@ module.exports = (db) => {
   router.post('/', (req, res) => {
     const maps = req.body;
     const queryString = `
-    INSERT INTO maps (title, description, image, location)
-    VALUES($1, $2, $3, $4)
+    INSERT INTO maps (title, description, image, latitude, longitude)
+    VALUES($1, $2, $3, $4, $5)
     RETURNING *;
     `;
     const queryParams = [
       maps.title,
       maps.description,
       maps.image,
-      maps.location,
+      maps.latitude,
+      maps.longitude
     ];
 
     return db.query(queryString, queryParams)
+
       .then((data) => {
-        console.log('one');
-        console.log(data.rows);
-        res.json(data.rows);
+        const maps = data.rows;
+        res.json({ maps });
+        // console.log(maps)
       })
       .catch(err => console.log(err));
   });

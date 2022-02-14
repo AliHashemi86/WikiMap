@@ -1,0 +1,17 @@
+{
+    "version": 3,
+    "mappings": "AMAA,AAAA,GAAG,CAAC;EACF,gBAAgB,EAAE,UAAU;CAC7B",
+    "sources": [
+        "../styles/styles.scss",
+        "../styles/_header_footer.scss",
+        "../styles/_index.scss",
+        "../styles/_login_register.scss",
+        "../styles/_maps.scss",
+        "../styles/_new_map.scss",
+        "../styles/_profile.scss",
+        "../styles/_variables.scss",
+        "../styles/_explore.scss"
+    ],
+    "names": [],
+    "file": "styles.css"
+}

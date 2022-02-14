@@ -16,6 +16,8 @@
 
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/createMap.js"></script>
+
     <script
       src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
@@ -31,12 +33,18 @@
         <input name="title" placeholder="title">
         <input name="image" placeholder="image URL">
         <input name="description" placeholder="description">
-        <input name="location" placeholder="location">
+        <input name="latitude" placeholder="latitude">
+        <input name="longitude" placeholder="longitude">
+
         <button type="submit">Sumbit</button>
         </div>
       </form>
     </section>
-    </section>
+    <div>
+      <!-- Ignore this button testing console.logs on click -->
+      <button id="create-map" type="submit">WORK</button>
+    </div>
+
     <div style="height: 900px" id="new-map"></div>
     <footer><%- include('partials/_footer')%></footer>
   </body>
@@ -53,7 +61,7 @@
   map.on("click", onMapClick);
 
   //Marker variable that uses leaflets library to create a marker at a chosen location
-  const marker = L.marker([51.5, -0.09], {
+  const marker = L.marker([43.64415945149408, -79.40221473058529], {
     draggable: true,
     title: "Pick a location",
   })

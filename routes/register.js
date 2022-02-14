@@ -3,7 +3,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("register");
+    const templatevars = {
+      users: null,
+    };
+    res.render("register", templatevars);
   });
 
   router.post("/", (req, res) => {

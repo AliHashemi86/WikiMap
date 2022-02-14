@@ -26,7 +26,6 @@ module.exports = (db) => {
       .then((data) => {
         const maps = data.rows;
         res.json({ maps });
-        // console.log(maps)
       })
       .catch(err => console.log(err));
   });

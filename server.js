@@ -40,9 +40,12 @@ const exploreRoutes = require("./routes/explore");
 const mapsRoutes = require("./routes/maps");
 const registerRoutes = require("./routes/register");
 const loginRoutes = require("./routes/login");
+const logoutRoutes = require("./routes/logout");
 const new_mapRoutes = require("./routes/new_map");
 const profileRoutes = require("./routes/profile");
 const mapPointsRoutes = require("./routes/mapPoints");
+
+const { getUersByEmail } = require('./public/scripts/helpers');
 
 
 // Mount all resource routes
@@ -52,6 +55,7 @@ app.use("/explore", exploreRoutes(db));
 app.use("/maps", mapsRoutes(db));
 app.use("/register", registerRoutes(db));
 app.use("/login", loginRoutes(db));
+app.use("/logout", logoutRoutes(db));
 app.use("/new_map", new_mapRoutes(db));
 app.use("/profile", profileRoutes(db));
 app.use("/api/mapPoints", mapPointsRoutes(db));

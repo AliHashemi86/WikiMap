@@ -3,8 +3,10 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    console.log('TEST in register');
-    res.render("profile");
+    const templatevars = {
+      users: null
+    };
+    res.render("profile", templatevars);
   });
   return router;
 };

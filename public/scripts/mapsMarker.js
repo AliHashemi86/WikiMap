@@ -1,11 +1,11 @@
 //Listening on for click event
 $(() => {
   console.log('IS THIS WORKING?');
-  $('.map-type').on('click', testing);
+  $('.map-type').load(mapMarkers());
 });
 
 //Triggers on click pulling information from the database
-const testing = () => {
+const mapMarkers = () => {
   $.get('/api/mapPoints')
     .then((data) => {
       console.log(data.maps)
@@ -20,8 +20,6 @@ const testing = () => {
           <p>${maping.description}</p>
           `
         )
-    .openPopup();
-    // console.log(marker);
       }
     });
 };

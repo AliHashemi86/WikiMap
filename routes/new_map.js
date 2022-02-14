@@ -3,7 +3,6 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    console.log('TEST');
     res.render("new_map");
   });
 
@@ -22,12 +21,12 @@ module.exports = (db) => {
     ];
 
     return db.query(queryString, queryParams)
-    .then((data) => {
-      console.log('one')
-      console.log(data.rows)
-      res.json(data.rows);
-    })
-    .catch(err => console.log(err));
+      .then((data) => {
+        console.log('one');
+        console.log(data.rows);
+        res.json(data.rows);
+      })
+      .catch(err => console.log(err));
   });
   return router;
 };

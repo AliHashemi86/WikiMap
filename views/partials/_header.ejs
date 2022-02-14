@@ -19,18 +19,33 @@
     <script type="text/javascript" src="/scripts/maps.js"></script>
     <script type="text/javascript" src="/scripts/explore.js"></script>
 
-
+    <script
+      src="https://kit.fontawesome.com/c8790bc55d.js"
+      crossorigin="anonymous"
+    ></script>
 
   </head>
   <!-- the top nav bar -->
   <header>
     <nav class="top-nav">
-          <a href="/" class="logo">
-            <img id="logo" src="images/1bda1f0a63de48b3b70449b61cab4250-removebg-preview.png" alt="MapApp-Logo">
-          </a>
-          <ul class="nav-links">
-          <li class="nav-item"> <a href="/maps"> Maps </a></li>
-          <li class="nav-item"> <a href="/explore"> Explore </a></li>
+
+      <a href="/" class="logo">
+        <img
+          id="logo"
+          src="images/1bda1f0a63de48b3b70449b61cab4250-removebg-preview.png"
+          alt="MapApp-Logo"
+        />
+      </a>
+      <div>
+        <ul class="nav-links">
+          <li class="nav-item"><a href="/maps"> Maps </a></li>
+          <li class="nav-item"><a href="/explore"> Explore </a></li>
+          <li class="nav-item">
+            <a href="/#"><i class="fa-regular fa-user"></i></a>
+          </li>
+          <li class="nav-item">
+            <a href="/explore"><i class="fa-solid fa-magnifying-glass"></i> </a>
+          </li>
           <% if (!users) { %>
             <li class="nav-item"> <a href="/login"> Login </a></li>
             <li class="nav-item"> <a href="/register"> Register </a></li>
@@ -39,10 +54,14 @@
             <form method="post" action="/logout">
             <li class="nav-item"> <a href="/logout"> Log out</a></li>
           <% } %>
-            </form>
         </ul>
-        </div>
       </div>
     </nav>
   </header>
 </html>
+
+<!-- <div class="dropdown-content">
+  <a href="#">Link 1</a>
+  <a href="#">Link 2</a>
+  <a href="#">Link 3</a>
+  </div> -->

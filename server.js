@@ -42,6 +42,8 @@ const registerRoutes = require("./routes/register");
 const loginRoutes = require("./routes/login");
 const new_mapRoutes = require("./routes/new_map");
 const profileRoutes = require("./routes/profile");
+const mapPointsRoutes = require("./routes/mapPoints");
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -52,6 +54,8 @@ app.use("/register", registerRoutes(db));
 app.use("/login", loginRoutes(db));
 app.use("/new_map", new_mapRoutes(db));
 app.use("/profile", profileRoutes(db));
+app.use("/api/mapPoints", mapPointsRoutes(db));
+
 
 // Note: mount other resources here, using the same pattern above
 

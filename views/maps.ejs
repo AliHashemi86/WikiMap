@@ -9,10 +9,26 @@
   <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
   <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
+
   <!-- JavaScript -->
   <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
   <script type="text/javascript" src="/scripts/app.js"></script>
   <script type="text/javascript" src="/scripts/register.js"></script>
+  <script type="text/javascript" src="/scripts/mapsMarker.js"></script>
+
+  <!-- Leaflet -->
+    <link
+  rel="stylesheet"
+  href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+  integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+  crossorigin=""
+  />
+  <script
+  src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+  integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+  crossorigin=""
+></script>
+
 
   </head>
 
@@ -33,7 +49,11 @@
           </div>
       </section>
         <!-- Map Section -->
+        <button class="map-type">CLICK ME FOR MARKERS</button>
+        <section class="test"></section>
       <section>
+        <div style="height: 900px" id="maps-section"></div>
+
         <div>
           <span>INSERT API LINK HERE???</span>
         </div>
@@ -42,3 +62,10 @@
   <footer><%- include('partials/_footer')%></footer>
 </body>
 </html>
+<script>
+  const map = L.map("maps-section").setView([43.7507918304109, -79.58469815531056], 10);
+L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  attribution:
+    '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+}).addTo(map);
+</script>

@@ -1,18 +1,18 @@
 //Listening on for click event
 $(() => {
-  console.log('IS THIS WORKING?')
-  $('#create-map').on('click', testing)
-})
+  console.log('IS THIS WORKING?');
+  $('#create-map').on('click', testing);
+});
 
 //Triggers on click pulling information from the database
-function testing() {
+const testing = () => {
   $.get('/new_map')
     .then((data) => {
-      for(map in data.maps) {
-        console.log(map)
+      for (let map in data.maps) {
+        console.log(map);
       }
       // const marker = L.marker(data.rows[5])
-    })
+    });
 //   const marker = L.marker(e.latlng, {
 //     draggable: true,
 //   })
@@ -24,4 +24,4 @@ function testing() {
 //     )
 //     .openPopup();
 //   console.log(marker);
-}
+};

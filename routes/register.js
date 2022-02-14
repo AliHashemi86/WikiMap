@@ -21,7 +21,7 @@ module.exports = (db) => {
     return db.query(queryString, queryParams)
 
       .then((data) => {
-        res.json(data.rows[0]);
+        res.redirect('/profile');
       });
   });
   return router;

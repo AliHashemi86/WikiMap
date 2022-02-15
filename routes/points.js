@@ -3,10 +3,12 @@ const router  = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    db.query(`SELECT latitude, longitude FROM maps WHERE title = 'food';`)
+    db.query(`
+    SELECT * FROM points WHERE map_id = 1;`)
+
       .then(data => {
-        const maps = data.rows;
-        res.json({ maps });
+        const mapPoints = data.rows;
+        res.json({ mapPoints });
       })
       .catch(err => {
         res
@@ -14,6 +16,5 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
-
   return router;
 };

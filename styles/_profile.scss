@@ -5,19 +5,3 @@ a:-webkit-any-link {
   cursor: pointer;
   text-decoration: none;
 }
-.side-nav {
-  width: 5em;
-  height: 100vh;
-  background-color: $background;
-  .profile-sidebar {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    height: 20vh;
-    font-size: 1.5em;
-    // text-decoration: none;
-    padding: 0.9em;
-    align-items: center;
-    justify-content: space-between;
-  }
-}

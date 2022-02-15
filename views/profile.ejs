@@ -3,17 +3,17 @@
   <head>
     <title>Profile Page</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
-  <!-- JavaScript -->
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <script type="text/javascript" src="/scripts/register.js"></script>
-  <script type="text/javascript" src="/scripts/userInfo.js"></script>
-</head>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/register.js"></script>
+    <script type="text/javascript" src="/scripts/userInfo.js"></script>
+  </head>
 
   <body>
     <!-- header start -->
@@ -21,63 +21,46 @@
     <!-- header end -->
     <main>
       <!-- Side Nav -->
+      <!--
     <nav class="side-nav">
-    <div class="profile-sidebar">
-      <a href="#"<i class="fa-regular fa-user"></i></a>
-      <a href="#"<i class="fa fa-globe"></i></a>
-      <a href="#"<i class="fa fa-trash"></i></a>
-    </div>
-    </nav>
+      <div class="side-nav-user">
+        <a href="#"<i class="fa-regular fa-user"></i></a>
+      </div>
+      <div class="side-nav-maps">
+        <a href="#"<i class="fa fa-globe"></i></a>
+      </div>
+      <div class="side-nav-logout">
+        <a href="#"<i class="fa fa-trash"></i></a>
+      </div>
 
-        <!-- Profile Information -->
+    </div>
+    </nav> -->
+
+      <!-- Profile Information -->
+      <section class="profile">
+        <img
+          class="profile-img"
+          src="images/360_F_346839683_6nAPzbhpSkIpb8pmAwufkC7c5eD7wYws.jpeg"
+          alt="Profile-Avatar"
+        />
+        <div class="profile-info">
+          <h3 class="infoDump">John Doe</h3>
+          <h4>johndoe@gmail.com</h4>
+          <a href="/maps">My Maps</a>
+        </div>
+      </section>
+
+      <!-- Favorites Section -->
       <section>
+        <!-- Container - Outer Box -->
+        <div>
+          <!-- Container - Inner Box -->
           <div>
-            <img src="profile photo" alt="" />
-          </div>
-            <div class="info">
-              <h1 class="infoDump"></h1>
-            </div>
-          <div>
-            <button type="button">Edit</button>
-          </div>
-          <div>
-            <h3>Edit Profile</h3>
+            <a href="">MapName</a>
+            <img src="/" alt="Map Thumbnail" />
           </div>
         </div>
       </section>
-                <!-- Edit Profile Input *** Do we want this?
-                *** Do we have to have a new page?-->
-              <section>
-                <div>
-                  <input type="text" placeholder="First Name" value="*" />
-                  <input type="text" placeholder="Last Name" value="*" />
-                </div>
-                <div>
-                  <input type="text" placeholder="Username" value="*" />
-                </div>
-                <div>
-                  <input type="text" placeholder="Email" value="*" />
-                </div>
-                <div>
-                  <input type="text" placeholder="Password" value="*" />
-                </div>
-                <div>
-                  <button type="button">Save</button>
-                </div>
-              </section>
-            </div>
-
-        <!-- Favorites Section -->
-        <section>
-          <!-- Container - Outer Box -->
-          <div>
-            <!-- Container - Inner Box -->
-            <div>
-              <a href="">MapName</a>
-              <img src="/" alt="Map Thumbnail">
-            </div>
-          </div>
-        </section>
     </main>
 
     <!-- footer start -->

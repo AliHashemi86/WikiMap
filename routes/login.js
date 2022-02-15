@@ -23,7 +23,7 @@ module.exports = (db) => {
     return db.query(queryString, queryParams)
 
       .then((data) => {
-        res.redirect('/profile');
+        res.redirect('/maps');
       });
   });
   return router;

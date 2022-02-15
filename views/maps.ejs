@@ -32,15 +32,46 @@
     <header><%- include('partials/_header')%></header>
     <main>
       <!-- Map Section -->
+      <form class="test-map">
+      <input type="text" name="title">
+      <button type="submit">Submit</button>
+      </form>
+      <main>
       <section class="test"></section>
-      <section>
+      <section> -->
         <div style="height: 900px" id="maps-section"></div>
+      </section>
+
+
+      <!-- TESTING LIST SECTION DO NOT TOUCH -->
+      <!-- <section class="maps"></section> -->
+      <!-- DO NOT TOUCH -->
+      <section>
+        <div sty -->le="height: 900px" id="maps-section2"></div>
       </section>
     </main>
     <footer><%- include('partials/_footer')%></footer>
   </body>
 </html>
 <script>
+////WORKING ON LISTING SECTION////////////////////////////////////////////////////////////////////
+// $.get('/api/mapPoints').then(data => {
+//   console.log('data:', data)
+//   data.maps.map(item => {
+//     $('<div>').css({'height': '900px'}).attr('id', 'abc')
+//       const map = L.map('abc').setView(
+//     [43.7507918304109, -79.58469815531056],
+//     10
+//   );
+//   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+//     attribution:
+//       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+//   }).addTo(map);
+//     })
+//     $('.maps').prepend(map)
+//   })
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
   const map = L.map("maps-section").setView(
     [43.7507918304109, -79.58469815531056],
     10
@@ -49,4 +80,27 @@
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
+
+//   // const map2 = L.map("maps-section2").setView(
+  //   [43.7507918304109, -79.58469815531056],
+  //   10
+  // );
+  // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  //   attribution:
+  // // //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  // }).addTo(map2);
+
+  $('.test-map').on('submit', function(e) {
+    e.preventDefault();
+    const title = $(this).find('input').val()
+    $.post('/api/mapPoints', {title})
+    .then(resp => {
+      console.log(resp)
+        for (const item of resp.maps) {
+          map.panTo(new L.LatLng(item.latitude, item.longitude));
+        }
+      })
+    })
+
+
 </script>

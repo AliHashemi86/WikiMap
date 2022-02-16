@@ -78,6 +78,7 @@ $.get('/api/mapPoints').then(data => {
       latitude: item.latitude,
       longitude: item.longitude
     }
+
     const map = L.map("maps-section").setView(
     [43.7507918304109, -79.58469815531056],
     10

@@ -40,11 +40,18 @@
         <input name="description" placeholder="description">
         <input name="latitude" placeholder="latitude">
         <input name="longitude" placeholder="longitude">
-
         <button type="submit">Sumbit</button>
-        </div>
       </form>
+     </section>
+    <section>
+      <form action="/new_map" method="post" >
+      <input name="titles" placeholder="title">
+      <input name="latitudes" placeholder="latitude">
+      <input name="longitudes" placeholder="longitude">
+      <button type="submit">Sumbit</button>
+  </form>
     </section>
+
     <div>
       <!-- Ignore this button testing console.logs on click -->
       <!-- <button class="map-type"></button>
@@ -62,38 +69,6 @@
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
-
-  //Click event that triggers MapClick function
-  map.on("click", onMapClick);
-
-  //Marker variable that uses leaflets library to create a marker at a chosen location
-  const marker = L.marker([43.64415945149408, -79.40221473058529], {
-    draggable: true,
-    title: "Pick a location",
-  })
-    .addTo(map)
-    .bindPopup(
-      `<h1>This is title</h1>
-  <img style="height: 100px" src="https://i.pinimg.com/474x/61/52/60/615260a333b8a6f00ff2cc8e5713e9e2.jpg">
-  <p>This is description</p>`
-    )
-    .openPopup();
-
-  //Function that creates markers at whatever location the user clicks on
-  function onMapClick(e) {
-    const marker = L.marker(e.latlng, {
-      draggable: true,
-    })
-      .addTo(map)
-      .bindPopup(
-        `<h1>This is title</h1>
-  <img style="height: 100px" src="">
-  <p>This is description</p>`
-      )
-      .openPopup();
-    console.log(marker);
-  }
-  //testing
 </script>
 
 <!--

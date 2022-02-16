@@ -12,43 +12,119 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/register.js"></script>
+
+    <!-- bootstrap -->
+
+    <!-- Latest compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
+      crossorigin="anonymous"
+    />
+
+    <!-- Optional theme -->
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
+      integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
+      crossorigin="anonymous"
+    />
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"
+      integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd"
+      crossorigin="anonymous"
+    ></script>
+
   </head>
 
   <body>
     <!-- Header partial -->
     <header><%- include('partials/_header')%></header>
-    <!-- Main register section -->
-    <main>
-      <div>
-        <h1>Register</h1>
-        <form method="post" action="/register">
-          <label for="inputPassword">Name</label>
-          <input
-            type="text"
-            class="form-control"
-            name="name"
-            placeholder="Name"
-          />
-          <label for="inputPassword">Email address</label>
-          <input
-            type="email"
-            class="form-control"
-            placeholder="Email"
-            name="email"
-          />
-          <label for="inputPassword">Password</label>
-          <input
-            type="password"
-            class="form-control"
-            placeholder="Password"
-            name="password"
-          />
-          <br />
-          <button type="submit">Register</button>
-        </form>
+    <!-- Main register sectioncccccc -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-xl-9 mx-auto">
+          <div
+            class="card flex-row my-5 border-0 shadow rounded-3 overflow-hidden"
+          >
+            <div class="card-img-left d-none d-md-flex">
+              <!-- Background image for card set in CSS! -->
+            </div>
+            <div class="card-body p-4 p-sm-5">
+              <h5 class="card-title text-center mb-5 fw-light fs-5">
+                Register
+              </h5>
+              <form action="/register" method="POST">
+                <div class="form-floating mb-3">
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    name="name"
+                    placeholder="Name"
+                    required
+                    autofocus
+                  />
+                  <label for="name">Name</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    placeholder="name@example.com"
+                  />
+                  <label for="email">Email</label>
+                </div>
+
+                <hr />
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="password"
+                    name="password"
+                    placeholder="Password"
+                  />
+                  <label for="password">Password</label>
+                </div>
+
+                <div class="form-floating mb-3">
+                  <input
+                    type="password"
+                    class="form-control"
+                    id="floatingPasswordConfirm"
+                    placeholder="Confirm Password"
+                  />
+                  <label for="floatingPasswordConfirm">Confirm Password</label>
+                </div>
+
+                <div class="d-grid mb-2">
+                  <button
+                    class="btn btn-lg btn-primary btn-login fw-bold text-uppercase"
+                    type="submit"
+                  >
+                    Register
+                  </button>
+                </div>
+
+                <a class="d-block text-center mt-2 small" href="/login"
+                  >Have an account? Sign In</a
+                >
+
+
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
       </div>
-    </main>
-    <!-- Footer partial -->
-    <footer><%- include('partials/_footer')%></footer>
+    </div>
   </body>
 </html>

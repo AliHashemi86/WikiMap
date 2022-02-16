@@ -1,29 +1,24 @@
-const express = require('express');
-const router  = express.Router();
+const express = require("express");
+const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    const templatevars = {
-      users: null
-    };
-    res.render("login", templatevars);
+    
+    res.render("login");
   });
 
   router.post("/", (req, res) => {
     const queryString = `
     SELECT email, password FROM users
     WHERE email = $1
-    AND password = $2`
-    ;
+    AND password = $2`;
     const users = req.body;
-    const queryParams = [
-      users.email,
-      users.password,
-    ];
-    return db.query(queryString, queryParams)
+    const queryParams = [users.email, users.password];
+    return db
+      .query(queryString, queryParams)
 
       .then((data) => {
-        res.redirect('/profile');
+        res.redirect("/maps");
       });
   });
   return router;

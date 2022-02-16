@@ -57,6 +57,8 @@ const new_mapRoutes = require("./routes/new_map");
 const mapPointsRoutes = require("./routes/mapPoints");
 const pointsRoutes = require("./routes/points");
 const registerRoutes = require("./routes/register");
+const createMapRoutes = require("./routes/createMap");
+
 
 
 // Mount all resource routes
@@ -69,6 +71,9 @@ app.use("/register", registerRoutes(db));
 app.use("/new_map", new_mapRoutes(db));
 app.use("/api/mapPoints", mapPointsRoutes(db));
 app.use("/api/points", pointsRoutes(db));
+app.use("/createMap", createMapRoutes(db));
+
+
 
 
 // Note: mount other resources here, using the same pattern above

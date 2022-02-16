@@ -32,17 +32,15 @@
 
   <body>
     <%- include('partials/_header')%>
-    <h1>Create Map Point</h1>
+    <h1>Create Map</h1>
     <section>
-      <form action="/new_map" method="post" >
-        <input name="title" placeholder="title">
-        <input name="image" placeholder="image URL">
-        <input name="description" placeholder="description">
-        <input name="latitude" placeholder="latitude">
-        <input name="longitude" placeholder="longitude">
-        <button type="submit">Sumbit</button>
-      </form>
-     </section>
+      <form action="/createMap" method="post" >
+      <input name="titles" placeholder="title">
+      <input name="latitudes" placeholder="latitude">
+      <input name="longitudes" placeholder="longitude">
+      <button type="submit">Sumbit</button>
+  </form>
+    </section>
 
     <div>
       <!-- Ignore this button testing console.logs on click -->
@@ -54,35 +52,3 @@
     <footer><%- include('partials/_footer')%></footer>
   </body>
 </html>
-<!-- <script>
-  //Map section holds the tiles and container of the map
-  const map = L.map("new-map").setView([51.505, -0.09], 13);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
-</script> -->
-
-<!--
-  Features:
-
-  1. Map Editing
-    1 - Create Map
-      a - Name Map
-      b - Describe Map
-      c - Image for Map?
-    2 - Edit Map
-      a - Add location
-      b - Delete location
-    3 - Delete Map
-
-  2. Specific Locations Within Map List
-    1 - Image of Location
-    2 - Location Address
-      a - Image of specific location
-      b - Country
-      c - City
-      d - Address
-    3 - Location Description
-
- -->

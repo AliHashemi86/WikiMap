@@ -1,7 +1,7 @@
 //Listening on for click event
 $(() => {
-  console.log('IS THIS WORKING?');
-  $('.map-type').load(findMap(), mapMarkers());
+  // console.log('IS THIS WORKING?');
+  $('.map-type').load(findMap(), mapMarkers(), mapNameList());
 });
 
 const findMap = () => {
@@ -18,10 +18,10 @@ const findMap = () => {
 const mapMarkers = () => {
   $.get('/api/points')
     .then((data) => {
-      console.log(data.maps);
+      // console.log(data.maps);
       for (const point of data.mapPoints) {
-        console.log(data.mapPoints);
-        console.log(point);
+        // console.log(data.mapPoints);
+        // console.log(point);
         //Grabbing the latitude/longitude and placing it on the map
         const marker = L.marker([point.latitude, point.longitude])
           .addTo(map)
@@ -30,8 +30,25 @@ const mapMarkers = () => {
             <h1>${point.title}</h1>
             <image src="${point.image}">
             <p>${point.description}</p>
-            `
+            `, {maxWidth: "auto"}
+
           );
       }
     });
+};
+
+const mapNameList = () => {
+  console.log('TEST MAP NAME 1')
+  $.get("/api/mapPoints").then((data) => {
+    console.log('test map', data.maps)
+    let mapName = $(".mapName");
+    for (let map of data.maps) {
+      // console.log('test map2', map)
+      let template = `<p>${map.title}</p>`;
+      mapName.append(template);
+
+    }
+    console.log('TEST MAP NAME 2')
+
+  });
 };

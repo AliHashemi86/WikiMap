@@ -31,6 +31,7 @@
   <body>
     <header><%- include('partials/_header')%></header>
     <main>
+      <div class="mapName">Feel free to search one of the avaliable maps in this</div>
       <!-- Map Section -->
       <form class="test-map">
       <input type="text" name="title">
@@ -136,7 +137,7 @@ $.get('/api/mapPoints').then(data => {
 ///This is first MAP
   const map = L.map("maps-section").setView(
     [43.7507918304109, -79.58469815531056],
-    16
+    15
   );
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:

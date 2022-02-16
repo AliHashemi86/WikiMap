@@ -3,46 +3,45 @@
   <head>
     <title>New Map Page</title>
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
-  <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
-  <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
+    <!-- CSS -->
+    <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
+    <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
+    <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
-  <!-- JavaScript -->
-  <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
-  <script type="text/javascript" src="/scripts/app.js"></script>
-  <script type="text/javascript" src="/scripts/register.js"></script>
-  <script type="text/javascript" src="/scripts/newMaker.js"></script>
+    <!-- JavaScript -->
+    <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
+    <script type="text/javascript" src="/scripts/app.js"></script>
+    <script type="text/javascript" src="/scripts/register.js"></script>
+    <script type="text/javascript" src="/scripts/newMaker.js"></script>
 
-
-  <!-- Leaflet -->
-  <link
-    rel="stylesheet"
-    href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-    integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-    crossorigin=""
+    <!-- Leaflet -->
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
     />
 
-  <script
-    src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-    integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-    crossorigin=""
-  ></script>
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
   </head>
 
   <body>
     <%- include('partials/_header')%>
     <h1>Create Map Point</h1>
     <section>
-      <form action="/new_map" method="post" >
-        <input name="title" placeholder="title">
-        <input name="image" placeholder="image URL">
-        <input name="description" placeholder="description">
-        <input name="latitude" placeholder="latitude">
-        <input name="longitude" placeholder="longitude">
-        <button type="submit">Sumbit</button>
+      <form action="/new_map" method="post">
+        <input name="title" placeholder="title" />
+        <input name="image" placeholder="image URL" />
+        <input name="description" placeholder="description" />
+        <input name="latitude" placeholder="latitude" />
+        <input name="longitude" placeholder="longitude" />
+        <button type="submit">Submit</button>
       </form>
-     </section>
+    </section>
 
     <div>
       <!-- Ignore this button testing console.logs on click -->

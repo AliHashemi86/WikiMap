@@ -4,7 +4,7 @@ const router  = express.Router();
 module.exports = (db) => {
   router.get("/", (req, res) => {
     db.query(`
-    SELECT * FROM points WHERE map_id = 1;`)
+    SELECT * FROM points WHERE map_id = $1;`)
       .then(data => {
         const mapPoints = data.rows;
         res.json({ mapPoints });

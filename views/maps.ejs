@@ -37,42 +37,48 @@
       <button type="submit">Submit</button>
       </form>
       <main>
-      <section class="test"></section>
-      <section> -->
+      <section class="container"></section>
+      <section>
         <div style="height: 900px" id="maps-section"></div>
       </section>
 
 
       <!-- TESTING LIST SECTION DO NOT TOUCH -->
-      <!-- <section class="maps"></section> -->
+      <section class="maps"></section>
       <!-- DO NOT TOUCH -->
-      <section>
-        <div sty -->le="height: 900px" id="maps-section2"></div>
-      </section>
+      <!-- <section>
+        <div style="height: 900px" id="maps-section2"></div>
+      </section> -->
     </main>
     <footer><%- include('partials/_footer')%></footer>
   </body>
 </html>
+
 <script>
 ////WORKING ON LISTING SECTION////////////////////////////////////////////////////////////////////
-// $.get('/api/mapPoints').then(data => {
-//   console.log('data:', data)
-//   data.maps.map(item => {
-//     $('<div>').css({'height': '900px'}).attr('id', 'abc')
-//       const map = L.map('abc').setView(
-//     [43.7507918304109, -79.58469815531056],
-//     10
-//   );
-//   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-//     attribution:
-//       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-//   }).addTo(map);
-//     })
-//     $('.maps').prepend(map)
-//   })
-//////////////////////////////////////////////////////////////////////////////////////////////////
-
-  const map = L.map("maps-section").setView(
+$.get('/api/mapPoints').then(data => {
+  let x = 0
+// console.log('data:', data)
+  data.maps.map(item => {
+    x++
+    console.log('THIS IS ITEM', item.latitude, item.longitude)
+   const div = $('<div>').attr('id', 'maping')
+    // console.log('This is divID', div.id = 'maping' + x)
+    console.log('This is div', div)
+    let addID = 'maping' + x
+    //Has the id maping adding one for each map in the database
+    console.log('this is addID', addID)
+    div.id = addID;
+     console.log('div test', div)
+    //   const map = L.map(addID).setView(
+    // [item.latitude, item.longitude], 10);
+    // return map;
+    let map = {
+      id: item.id,
+      latitude: item.latitude,
+      longitude: item.longitude
+    }
+    const map = L.map("maps-section").setView(
     [43.7507918304109, -79.58469815531056],
     10
   );
@@ -81,15 +87,44 @@
       '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
   }).addTo(map);
 
-//   // const map2 = L.map("maps-section2").setView(
+  // console.log('this is map', map)
+  // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  //   attribution:"maps-section"
+  //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  // }).addTo(map);
+    })
+    console.log(array)
+
+    // $(div).prepend(map)
+  })
+
+//////////////////////////////////////////////////////////////////////////////////////////////////
+
+///This is first MAP
+  // const map = L.map("maps-section").setView(
   //   [43.7507918304109, -79.58469815531056],
   //   10
   // );
   // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
   //   attribution:
-  // // //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  // }).addTo(map2);
+  //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  // }).addTo(map);
 
+///Testing loop
+  // array.map((m) => {
+  //   let p = L.map(`maps-section-${m.id}`).setView(
+  //   [m.latitude, m.longitude],
+  //   10
+  // );
+  // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+  //   attribution:
+  //     '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  // }).addTo(p);
+  // console.log("p:", p)
+  // })
+  // console.log(map);
+
+  //Search bar
   $('.test-map').on('submit', function(e) {
     e.preventDefault();
     const title = $(this).find('input').val()

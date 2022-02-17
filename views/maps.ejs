@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
-    <link rel="stylesheet" href="/styles/styles.scss" type="text/scss" />
 
     <!-- JavaScript -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
@@ -31,19 +30,16 @@
 
   <body>
     <header><%- include('partials/_header')%></header>
-    <main >
-      <section class="intro">
-        <h3>Feel free to search for avaliable maps in this list</h3>
+    <main>
+      <section>
+        <h4>Feel free to search for available maps in this list</h4>
         <div class="mapName"></div>
       </section>
-      <br>
       <!-- Map Section -->
-      <section class="test-map1">
       <form class="test-map">
       <input type="text" name="title">
       <button type="submit">Submit</button>
       </form>
-    </section>
 
       <main>
       <section class="container"></section>
@@ -56,7 +52,6 @@
   </body>
 </html>
 <script>
-
 ///Map
   const map = L.map("maps-section").setView(
     [43.7507918304109, -79.58469815531056],
@@ -66,8 +61,6 @@
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors',
   }).addTo(map);
-
-
   //Search bar
   $('.test-map').on('submit', function(e) {
     e.preventDefault();

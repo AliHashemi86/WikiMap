@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Create Map Points Page</title>
+    <title>New Map Page</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -12,6 +12,8 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/register.js"></script>
+    <script type="text/javascript" src="/scripts/newMap.js"></script>
+
 
     <!-- Leaflet -->
     <link
@@ -30,8 +32,8 @@
 
   <body>
     <%- include('partials/_header')%>
-    <section class="main">
     <h1>Create Map Point</h1>
+    <section>
       <form class="test-map" action="/createMapPoints" method="post">
         <input name="title" placeholder="title" />
         <input name="image" placeholder="image URL" />
@@ -41,9 +43,21 @@
         <button type="submit">Submit</button>
       </form>
     </section>
+    <div style="height: 900px" id="maps-section2"></div>
 
 
-    <div style="height: 900px" id="new-map"></div>
+    <!-- <div style="height: 900px" id="new-map"></div> -->
     <footer><%- include('partials/_footer')%></footer>
   </body>
 </html>
+
+<script>
+    const map10 = L.map("maps-section2").setView(
+    [43.7507918304109, -79.58469815531056],
+    15
+  );
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors',
+  }).addTo(map10);
+</script>

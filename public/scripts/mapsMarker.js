@@ -4,6 +4,12 @@ $(() => {
   $('.map-type').load(findMap(), mapMarkers(), mapNameList());
 });
 
+//Listen for right click
+// $(() => {
+//   // console.log('right clicked');
+//   $('.map-type').on('contextmenu', removePoint());
+// });
+
 const findMap = () => {
   $.get('/api/mapPoints')
     .then((data) => {
@@ -44,11 +50,26 @@ const mapNameList = () => {
     let mapName = $(".mapName");
     for (let map of data.maps) {
       // console.log('test map2', map)
-      let template = `<p>${map.title}</p>`;
+      let template = `<span style="padding-left: 10px">⭐ ${map.title}</span>`;
       mapName.append(template);
-
     }
     console.log('TEST MAP NAME 2')
 
   });
 };
+
+
+const removePoint = () => {
+  console.log('Right click')
+ ///Testing removing points on right click
+ $.get('/api/points').then((data) => {
+     // console.log(data.maps);
+     // for (const point of data.mapPoints) {
+     //   // console.log(data.mapPoints);
+     //   // console.log(point);
+     //   const marker = L.marker([point.latitude, point.longitude])
+     //     .removeLayer(marker)
+     //     //Template added to marker
+     // }
+   });
+  };

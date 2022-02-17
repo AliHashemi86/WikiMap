@@ -33,8 +33,8 @@ module.exports = (db) => {
 
     return db.query(queryString, queryParams)
     .then((data) => {
-      console.log('this update data',data)
-      console.log(data.rows)
+      // console.log('this update data',data)
+      // console.log(data.rows)
       const newMap = data.rows;
       res.redirect('/maps')
 

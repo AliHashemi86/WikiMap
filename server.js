@@ -37,7 +37,7 @@ db.connect();
 app.use(
   cookieSession({
     name: "session",
-    keys: ["key1", "key2"],
+    keys: ["key1", "key2", "key3"],
   })
 );
 
@@ -70,6 +70,8 @@ const registerRoutes = require("./routes/register");
 const createMapRoutes = require("./routes/createMap");
 const logoutRoutes = require("./routes/logout");
 const profileRoutes = require("./routes/profile");
+const favoritesRoutes = require("./routes/favorites");
+
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -84,6 +86,8 @@ app.use("/api/mapPoints", mapPointsRoutes(db));
 app.use("/api/points", pointsRoutes(db));
 app.use("/createMap", createMapRoutes(db));
 app.use("/profile", profileRoutes(db));
+app.use("/api/favorites", favoritesRoutes(db));
+
 
 // Note: mount other resources here, using the same pattern above
 

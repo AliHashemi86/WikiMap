@@ -12,7 +12,6 @@
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
     <script type="text/javascript" src="/scripts/register.js"></script>
-    <script type="text/javascript" src="/scripts/mapsMarker.js"></script>
 
     <!-- Leaflet -->
     <link
@@ -43,76 +42,8 @@
       </form>
     </section>
 
-    <div>
-      <!-- Ignore this button testing console.logs on click -->
-      <!-- <button class="map-type"></button>
-      <section class="test"></section> -->
-    </div>
 
     <div style="height: 900px" id="new-map"></div>
     <footer><%- include('partials/_footer')%></footer>
   </body>
 </html>
-<!-- <script>
-  //Map section holds the tiles and container of the map
-  const map = L.map("new-map").setView([51.505, -0.09], 13);
-  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-    attribution:
-      '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-  }).addTo(map);
-</script> -->
-
-<script>
-  ///This is first MAP
-  // const map = L.map("new-map").setView(
-  //   [43.7507918304109, -79.58469815531056],
-  //   15
-  // );
-  // L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-  //   attribution:
-  //     '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors',
-  // }).addTo(map);
-
-  // map.on("click", function (e) {
-  //   var lt = String(e.latlng.lat),
-  //     lg = String(e.latlng.lng);
-  //   var popup = L.popup()
-  //     .setLatLng(e.latlng)
-  //     .setContent(lt + " " + lg)
-  //     .openOn(map);
-  // });
-
-  // const buttonRemove =
-  //   '<button type="button" class="remove">delete marker 💔</button>';
-
-  // const markerPlace = document.querySelector(".test-map");
-
-  // // remove marker
-  // function removeMarker() {
-  //   const marker = this;
-  //   const btn = document.querySelector(".remove");
-  //   btn.addEventListener("click", function () {
-  //     markerPlace.textContent = "goodbye marker 💩";
-  //     map.removeLayer(marker);
-  //   });
-  // }
-
-  // // draged
-  // function dragedMaker() {
-  //   markerPlace.textContent = `change position: ${this.getLatLng().lat}, ${
-  //     this.getLatLng().lng
-  //   }`;
-  // }
-
-  //Search bar
-  // $(".test-map").on("submit", function (e) {
-  //   e.preventDefault();
-  //   const title = $(this).find("input").val();
-  //   $.post("/api/mapPoints", { title }).then((resp) => {
-  //     console.log(resp);
-  //     for (const item of resp.maps) {
-  //       map.panTo(new L.LatLng(item.latitude, item.longitude));
-  //     }
-  //   });
-  //   // });
-

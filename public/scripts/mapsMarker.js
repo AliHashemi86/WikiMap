@@ -27,7 +27,6 @@ const mapMarkers = () => {
             <h1 contenteditable="true">${point.title}</h1>
             <image src="${point.image}">
             <p contenteditable="true">${point.description}</p>
-            <button class="edit-marker">Edit</button>
             <button type="button" class="remove-marker">Delete</button>
             `, {maxWidth: "auto"}
           );

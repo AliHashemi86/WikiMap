@@ -43,28 +43,28 @@ module.exports = (db) => {
       });
   });
 
-  router.post("/", (req, res) => {
-    const newFav = req.body;
-    const queryString = `
-    INSERT INTO favorites (map_id, user_id, longitude)
-    VALUES($1, $2, $3)
-    RETURNING *;
-    `;
-    const queryParams = [
-      newFav.map_id,
-      newFav.user_id,
-    ];
+  // router.post("/", (req, res) => {
+  //   const newFav = req.body;
+  //   const queryString = `
+  //   INSERT INTO favorites (map_id, user_id, longitude)
+  //   VALUES($1, $2, $3)
+  //   RETURNING *;
+  //   `;
+  //   const queryParams = [
+  //     newFav.map_id,
+  //     newFav.user_id,
+  //   ];
 
-    return db
-      .query(queryString, queryParams)
+  //   return db
+  //     .query(queryString, queryParams)
 
-      .then((data) => {
-        const maps = data.rows;
-        res.redirect("/maps");
-        res.json({ maps });
-      })
-      .catch((err) => console.log(err));
-  });
+  //     .then((data) => {
+  //       const maps = data.rows;
+  //       res.redirect("/maps");
+  //       res.json({ maps });
+  //     })
+  //     .catch((err) => console.log(err));
+  // });
 
 
 // `

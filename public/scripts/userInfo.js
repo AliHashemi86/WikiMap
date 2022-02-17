@@ -1,7 +1,7 @@
 //Listening on for click event
 $(() => {
   console.log("User Information");
-  $("#info").load(userInfo(), favoriteList(), favMap());
+  $("#info").load(userInfo(), favoriteList());
 });
 
 //Triggers on click pulling information from the database
@@ -9,8 +9,8 @@ const userInfo = () => {
   $.get("/api/users").then((data) => {
     const container = $("#infoDump");
     for (user of data.users) {
-      const template = `<label>Name: </label><h2>${user.name}</h2>
-      <label>Email: </label><h2>${user.email}</h2>`;
+      const template = `<h2>Name: ${user.name}</h2>
+     <h2>Email: ${user.email}</h2>`;
       container.append(template);
     }
   });
@@ -18,7 +18,7 @@ const userInfo = () => {
 
 const favoriteList = () => {
   $.get("/api/favorites").then((data) => {
-    // console.log(data)
+    console.log(data)
     const fav = $("#favList");
     const values = Object.values(data)
     let holdValues = values[0]

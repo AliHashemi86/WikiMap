@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>New Map Page</title>
+    <title>Create Map Page</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -30,8 +30,8 @@
 
   <body>
     <%- include('partials/_header')%>
+    <section class="main">
     <h1>Create Map</h1>
-    <section>
       <form action="/createMap" method="post">
         <input name="titles" placeholder="title" />
         <input name="latitudes" placeholder="latitude" />

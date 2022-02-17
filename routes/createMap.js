@@ -23,10 +23,10 @@ module.exports = (db) => {
     return db.query(queryString, queryParams)
 
       .then((data) => {
-        console.log('this is data',data)
-        console.log(data.rows)
+        console.log('this is data',data);
+        console.log(data.rows);
         const newMap = data.rows;
-        res.redirect('/new_map')
+        res.redirect('/createMapPoints');
 
         res.json({ newMap });
       })

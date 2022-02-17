@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>New Map Page</title>
+    <title>Create Map Points Page</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="/vendor/normalize-4.1.1.css" type="text/css" />
@@ -31,9 +31,9 @@
 
   <body>
     <%- include('partials/_header')%>
+    <section class="main">
     <h1>Create Map Point</h1>
-    <section>
-      <form class="test-map" action="/new_map" method="post">
+      <form class="test-map" action="/createMapPoints" method="post">
         <input name="title" placeholder="title" />
         <input name="image" placeholder="image URL" />
         <input name="description" placeholder="description" />

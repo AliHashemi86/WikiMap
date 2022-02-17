@@ -40,14 +40,12 @@
           <li class="nav-item"><a href="/maps"> Maps </a></li>
           <!-- <li class="nav-item"><a href="/explore"> Explore </a></li> -->
           <li class="nav-item"><a href="/createmap"> Create Map </a></li>
-          <li class="nav-item"><a href="/new_map"> Create Map Points </a></li>
+          <li class="nav-item"><a href="/createMapPoints"> Create Map Points </a></li>
           <li class="nav-item"><a href="/profile"> Profile </a></li>
           <p id="user-fill" class="nav-item">Hey, <%= users.email %></p>
           <br />
           <form class="nav-item" method="post" action="/logout">
-            <button id="logout-btn" type="button" class="btn btn-primary">
-              Logout
-            </button>
+            <section  id="logout-btn" type="button" class="btn btn-primary"><button>Logout</button></section>
           </form>
           <% } %>
         </ul>

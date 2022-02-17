@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("new_map", { users: req.session.users });
+    res.render("createMapPoints", { users: req.session.users });
   });
 
   // Map Points//

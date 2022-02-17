@@ -34,7 +34,6 @@
       <section>
         <h4>Feel free to search for avaliable maps in this list</h4>
         <div class="mapName"></div>
-
       </section>
       <!-- Map Section -->
       <form class="test-map">
@@ -46,20 +45,14 @@
       <section>
         <div style="height: 900px" id="maps-section"></div>
       </section>
-
-
-      <!-- TESTING LIST SECTION DO NOT TOUCH -->
       <section class="maps"></section>
-      <!-- DO NOT TOUCH -->
-      <!-- <section>
-        <div style="height: 900px" id="maps-section2"></div>
-      </section> -->
     </main>
     <footer><%- include('partials/_footer')%></footer>
   </body>
 </html>
 <script>
-///This is first MAP
+
+///Map
   const map = L.map("maps-section").setView(
     [43.7507918304109, -79.58469815531056],
     15
@@ -68,6 +61,7 @@
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors',
   }).addTo(map);
+
 
   //Search bar
   $('.test-map').on('submit', function(e) {

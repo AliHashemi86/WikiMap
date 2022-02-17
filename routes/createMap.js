@@ -26,7 +26,7 @@ module.exports = (db) => {
         console.log('this is data',data)
         console.log(data.rows)
         const newMap = data.rows;
-        res.redirect('/maps')
+        res.redirect('/new_map')
 
         res.json({ newMap });
       })

@@ -1,14 +1,8 @@
-//Listening on for click event
+//fires off functions on load
 $(() => {
   // console.log('IS THIS WORKING?');
-  $('.map-type').load(findMap(), mapMarkers(), mapNameList());
+  $('.map-type').load(findMap(), mapMarkers(), mapNameList(), removePoint());
 });
-
-//Listen for right click
-// $(() => {
-//   // console.log('right clicked');
-//   $('.map-type').on('contextmenu', removePoint());
-// });
 
 const findMap = () => {
   $.get('/api/mapPoints')
@@ -20,56 +14,48 @@ const findMap = () => {
     });
 };
 
-// Triggers on click pulling information from the database
+// Triggers on load pulling information from the database
 const mapMarkers = () => {
   $.get('/api/points')
     .then((data) => {
-      // console.log(data.maps);
       for (const point of data.mapPoints) {
-        // console.log(data.mapPoints);
-        // console.log(point);
         //Grabbing the latitude/longitude and placing it on the map
         const marker = L.marker([point.latitude, point.longitude])
           .addTo(map)
           //Template added to marker
           .bindPopup(`
-            <h1>${point.title}</h1>
+            <h1 contenteditable="true">${point.title}</h1>
             <image src="${point.image}">
-            <p>${point.description}</p>
+            <p contenteditable="true">${point.description}</p>
+            <button class="edit-marker">Edit</button>
+            <button type="button" class="remove-marker">Delete</button>
             `, {maxWidth: "auto"}
-
           );
+          marker.on("popupopen", deletePoint);
       }
     });
 };
 
+// Remove marker function
+function deletePoint() {
+const marker = this;
+const removeButton = document.querySelector(".remove-marker");
+removeButton.addEventListener("click", () => {
+  map.removeLayer(marker);
+});
+}
+
+//Grabs a list of map names from the database
 const mapNameList = () => {
-  console.log('TEST MAP NAME 1')
+  // console.log('TEST MAP NAME 1')
   $.get("/api/mapPoints").then((data) => {
-    console.log('test map', data.maps)
+    // console.log('test map', data.maps)
     let mapName = $(".mapName");
     for (let map of data.maps) {
       // console.log('test map2', map)
       let template = `<span style="padding-left: 10px">⭐ ${map.title}</span>`;
       mapName.append(template);
     }
-    console.log('TEST MAP NAME 2')
-
+    // console.log('TEST MAP NAME 2')
   });
 };
-
-
-const removePoint = () => {
-  console.log('Right click')
- ///Testing removing points on right click
- $.get('/api/points').then((data) => {
-     // console.log(data.maps);
-     // for (const point of data.mapPoints) {
-     //   // console.log(data.mapPoints);
-     //   // console.log(point);
-     //   const marker = L.marker([point.latitude, point.longitude])
-     //     .removeLayer(marker)
-     //     //Template added to marker
-     // }
-   });
-  };

@@ -36,11 +36,34 @@ module.exports = (db) => {
       // console.log('this update data',data)
       // console.log(data.rows)
       const newMap = data.rows;
-      res.redirect('/maps')
+      res.redirect('/createMapPoints')
 
       res.json({ newMap });
     })
     .catch(err => console.log(err));
+});
+
+router.post("/", (req, res) => {
+  const delPoint = req.body
+  console.log(delPoint)
+  const queryString = `DELETE FROM points
+  WHERE id = $1
+  RETURNING *;`;
+
+  const queryParams = [
+    delPoint.id,
+  ];
+
+  return db.query(queryString, queryParams)
+  .then((data) => {
+    // console.log('this update data',data)
+    // console.log(data.rows)
+    const point = data.rows;
+    res.redirect('/createMapPoints')
+
+    res.json({ point });
+  })
+  .catch(err => console.log(err));
 });
 
   return router;

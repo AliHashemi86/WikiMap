@@ -3,7 +3,7 @@ const router = express.Router();
 
 module.exports = (db) => {
   router.get("/", (req, res) => {
-    res.render("new_map", {users:req.session.users});
+    res.render("new_map", { users: req.session.users });
   });
 
   // Map Points//
@@ -27,7 +27,7 @@ module.exports = (db) => {
 
       .then((data) => {
         const maps = data.rows;
-        res.redirect("/maps");
+        res.redirect("/new_map");
         res.json({ maps });
       })
       .catch((err) => console.log(err));

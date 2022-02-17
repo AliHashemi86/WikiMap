@@ -29,9 +29,8 @@ const mapMarkers2 = () => {
           <image src="${point.image}">
           <p>${point.description}</p>
 
-          <button onclick="popupForum2()">Edit</button>
-          <button onclick="popupForum()" class="remove-marker">Delete</button>
-
+          <button onclick="editForm()">Edit</button>
+          <button onclick="deleteForm()" class="remove-marker">Delete</button>
 
           <div id="edit-forum" style="display:none">
             <form action="/api/points" method="post">
@@ -42,8 +41,9 @@ const mapMarkers2 = () => {
               <button type="submit">Submit</button>
             </form>
           </div>
+
           <div id="delete-forum" style="display:none">
-          <form action="/api/points" method="post">
+          <form action="/api/deletePoint" method="post">
             <input name="id" placeholder="Number"/>
             <button type="submit">Submit</button>
           </form>
@@ -55,23 +55,14 @@ const mapMarkers2 = () => {
     });
 };
 
-const popupForum = () => {
+const deleteForm = () => {
   const popup  = document.getElementById("delete-forum");
   popup.style.display = "block";
 
 }
 
-const popupForum2 = () => {
+const editForm = () => {
   const popup2  = document.getElementById("edit-forum");
   popup2.style.display = "block";
 
-}
-
-// Remove marker function
-function deletePoint() {
-const marker = this;
-const removeButton = document.querySelector(".remove-marker2");
-removeButton.addEventListener("click", () => {
-  map.removeLayer(marker);
-});
 }

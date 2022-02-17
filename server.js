@@ -71,6 +71,8 @@ const createMapRoutes = require("./routes/createMap");
 const logoutRoutes = require("./routes/logout");
 const profileRoutes = require("./routes/profile");
 const favoritesRoutes = require("./routes/favorites");
+const deletePointRoutes = require("./routes/deletePoint");
+
 
 
 // Mount all resource routes
@@ -87,6 +89,8 @@ app.use("/api/points", pointsRoutes(db));
 app.use("/createMap", createMapRoutes(db));
 app.use("/profile", profileRoutes(db));
 app.use("/api/favorites", favoritesRoutes(db));
+app.use("/api/deletePoint", deletePointRoutes(db));
+
 
 
 // Note: mount other resources here, using the same pattern above

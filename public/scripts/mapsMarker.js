@@ -28,59 +28,12 @@ const mapMarkers = () => {
           <h1>${point.title}</h1>
           <image src="${point.image}">
           <p>${point.description}</p>
-
-          <button onclick="popupForum()">Edit</button>
-          <button onclick="popupForum2()" class="remove-marker">Delete</button>
-
-
-          <div id="edit-forum" style="display:none">
-            <form action="/api/points" method="post">
-              <input name="id" placeholder="Number"/>
-              <input name="title" placeholder="title" />
-              <input name="image" placeholder="image URL" />
-              <input name="description" placeholder="description" />
-              <button type="submit">Submit</button>
-            </form>
-          </div>
-          <div id="delete-forum" style="display:none">
-          <form action="/api/points" method="post">
-            <input name="id" placeholder="Number"/>
-            <button type="submit">Submit</button>
-          </form>
-        </div>
             `, {maxWidth: "auto"}
           );
           // marker.on("popupopen", deletePoint);
       }
     });
 };
-
-const popupForum = () => {
-  const popup  = document.getElementById("edit-forum");
-  popup.style.display = "block";
-
-}
-
-const popupForum2 = () => {
-  const popup2  = document.getElementById("delete-forum");
-  popup2.style.display = "block";
-
-}
-
-
-
-// const popupForum = () => {
-//   const popup  = document.getElementById("edit-forum");
-//   popup.style.display = "block";
-// }
-// Remove marker function
-// function deletePoint() {
-// const marker = this;
-// const removeButton = document.querySelector(".remove-marker");
-// removeButton.addEventListener("click", () => {
-//   map.removeLayer(marker);
-// });
-// }
 
 //Grabs a list of map names from the database
 const mapNameList = () => {
@@ -96,3 +49,7 @@ const mapNameList = () => {
     // console.log('TEST MAP NAME 2')
   });
 };
+
+marker.on('click', function(e){
+  map.fitBounds(marker.getBounds());
+});

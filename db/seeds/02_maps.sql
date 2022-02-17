@@ -1,3 +1,3 @@
-INSERT INTO maps (title, latitude, longitude) VALUES ('Food places in Toronto!', 43.7507918304109, -79.58469815531056);
-INSERT INTO maps (title, latitude, longitude) VALUES ('Tourist spots in Berlin',  52.529324322920054, 13.399320065836461);
-INSERT INTO maps (title, latitude, longitude) VALUES ('Hotels available in Somalia', 8.397700206715013, 48.483631593992044);
+INSERT INTO maps (title, latitude, longitude) VALUES ('Restaurants in Paris', 48.86059821616264, 2.3308972038491853);
+INSERT INTO maps (title, latitude, longitude) VALUES ('Tourist spots in Berlin',  52.50248054872408, 13.36807772841986);
+INSERT INTO maps (title, latitude, longitude) VALUES ('Best Pizza places in New York', 40.74153209780726, -73.9951378582913);

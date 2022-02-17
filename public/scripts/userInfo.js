@@ -25,7 +25,7 @@ const favoriteList = () => {
     console.log(values[0])
     for(let arr of holdValues) {
       console.log(arr.title)
-      const template = `<label>Favorite Maps: </label><h2>${arr.title}</h2>
+      const template = `<h3>${arr.title}</h3>
       `;
       fav.append(template);
     }

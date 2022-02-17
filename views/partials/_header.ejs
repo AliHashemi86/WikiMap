@@ -38,21 +38,19 @@
       </a>
       <div>
         <ul class="nav-links">
-          <li class="nav-item"><a href="/maps"> Maps </a></li>
-          <li class="nav-item"><a href="/explore"> Explore </a></li>
-          <li class="nav-item"><a href="/createmap"> Create Map </a></li>
-          <li class="nav-item"><a href="/new_map"> Create Map Points </a></li>
-          <li class="nav-item"><a href="/register"> Register </a></li>
-          <li class="nav-item"><a href="/login"> Login </a></li>
+          <% if (!users) { %>
+            <li class="nav-item"><a href="/register"> Register </a></li>
+            <li class="nav-item"><a href="/login"> Login </a></li>
+`         <% } else { %>
+            <li class="nav-item"><a href="/maps"> Maps </a></li>
+            <li class="nav-item"><a href="/explore"> Explore </a></li>
+            <li class="nav-item"><a href="/createmap"> Create Map </a></li>
+            <li class="nav-item"><a href="/new_map"> Create Map Points </a></li>
+            <p class="nav-item">Hey, <%= users.email %></p>
+            <br>
+            <form class="nav-item" method="post" action="/logout"><button>Log out</button></form>
+          <% } %>
 
-          <!-- <li class="nav-item">
-            <a href="/login"><i class="fa-regular fa-user"></i></a>
-          </li>
-          <li class="nav-item">
-            <a href="/explore"><i class="fa-solid fa-magnifying-glass"></i> </a>
-          </li> -->
-          <!-- <li class="nav-item"> <a href="/login"> Login </a></li>
-            <li class="nav-item"> <a href="/register"> Register </a></li> -->
         </ul>
       </div>
     </nav>

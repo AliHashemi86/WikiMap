@@ -7,7 +7,9 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const session = require("express-session");
+const cookieSession = require('cookie-session');
+//const session = require("express-session");
+
 const sessionConfig = {
   name: "monster", // name of cookie
   secret: process.env.SECRET, // secret that makes the cookie effective (find in ENV)
@@ -29,7 +31,13 @@ db.connect();
 // Load the logger first so all (static) HTTP requests are logged to STDOUT
 // 'dev' = Concise output colored by response status for development use.
 //         The :status token will be colored red for server error codes, yellow for client error codes, cyan for redirection codes, and uncolored for all other codes.
-app.use(session(sessionConfig));
+
+//app.use(session(sessionConfig));
+
+app.use(cookieSession({
+  name: 'session',
+  keys: ['key1', 'key2']
+}));
 
 app.use(morgan("dev"));
 
@@ -58,6 +66,8 @@ const mapPointsRoutes = require("./routes/mapPoints");
 const pointsRoutes = require("./routes/points");
 const registerRoutes = require("./routes/register");
 const createMapRoutes = require("./routes/createMap");
+const logoutRoutes = require("./routes/logout");
+
 
 
 
@@ -67,6 +77,7 @@ app.use("/api/users", usersRoutes(db));
 app.use("/explore", exploreRoutes(db));
 app.use("/maps", mapsRoutes(db));
 app.use("/login", loginRoutes(db));
+app.use("/logout", logoutRoutes(db));
 app.use("/register", registerRoutes(db));
 app.use("/new_map", new_mapRoutes(db));
 app.use("/api/mapPoints", mapPointsRoutes(db));
@@ -83,7 +94,7 @@ app.use("/createMap", createMapRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {users:req.session.users});
 });
 
 app.listen(PORT, () => {

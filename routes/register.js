@@ -15,15 +15,13 @@ module.exports = (db) => {
     VALUES ($1, $2, $3)
     RETURNING *`;
     const users = req.body;
-    console.log(users);
     const queryParams = [users.name, users.email, users.password];
     return db
       .query(queryString, queryParams)
 
       .then((data) => {
-        res.redirect("/maps");
+        res.redirect("/map");
       });
-    console.log(users);
   });
   return router;
 };

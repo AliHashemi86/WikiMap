@@ -1,7 +1,7 @@
 //fires off functions on load
 $(() => {
   // console.log('IS THIS WORKING?');
-  $('.map-type').load(findMap(), mapMarkers(), mapNameList(), removePoint());
+  $('.map-type').load(findMap(), mapMarkers(), mapNameList());
 });
 
 const findMap = () => {
@@ -24,16 +24,33 @@ const mapMarkers = () => {
           .addTo(map)
           //Template added to marker
           .bindPopup(`
-            <h1 contenteditable="true">${point.title}</h1>
+            <p>Num: ${point.id}</p>
+            <h1>${point.title}</h1>
             <image src="${point.image}">
-            <p contenteditable="true">${point.description}</p>
+            <p>${point.description}</p>
             <button type="button" class="remove-marker">Delete</button>
+            <button onclick="popupForum()">Edit</button>
+
+            <div id="edit-forum" style="display:none">
+              <form action="/api/points" method="post">
+                <input name="id" placeholder="Number"/>
+                <input name="title" placeholder="title" />
+                <input name="image" placeholder="image URL" />
+                <input name="description" placeholder="description" />
+                <button type="submit">Submit</button>
+              </form>
+            </div>
             `, {maxWidth: "auto"}
           );
           marker.on("popupopen", deletePoint);
       }
     });
 };
+
+const popupForum = () => {
+  const popup  = document.getElementById("edit-forum");
+  popup.style.display = "block";
+}
 
 // Remove marker function
 function deletePoint() {
@@ -52,7 +69,7 @@ const mapNameList = () => {
     let mapName = $(".mapName");
     for (let map of data.maps) {
       // console.log('test map2', map)
-      let template = `<span style="padding-left: 10px">⭐ ${map.title}</span>`;
+      let template = `<span style="padding-left: 10px">🌎${map.title}</span>`;
       mapName.append(template);
     }
     // console.log('TEST MAP NAME 2')

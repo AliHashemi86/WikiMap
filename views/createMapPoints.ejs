@@ -14,7 +14,6 @@
     <script type="text/javascript" src="/scripts/register.js"></script>
     <script type="text/javascript" src="/scripts/newMap.js"></script>
 
-
     <!-- Leaflet -->
     <link
       rel="stylesheet"
@@ -32,7 +31,7 @@
 
   <body>
     <%- include('partials/_header')%>
-    <h1>Create Map Point</h1>
+    <h1 id="create-mp">Create Map Point</h1>
     <section>
       <form class="test-map" action="/createMapPoints" method="post">
         <input name="title" placeholder="title" />
@@ -45,14 +44,13 @@
     </section>
     <div style="height: 900px" id="maps-section2"></div>
 
-
     <!-- <div style="height: 900px" id="new-map"></div> -->
     <footer><%- include('partials/_footer')%></footer>
   </body>
 </html>
 
 <script>
-    const map10 = L.map("maps-section2").setView(
+  const map10 = L.map("maps-section2").setView(
     [43.7507918304109, -79.58469815531056],
     15
   );

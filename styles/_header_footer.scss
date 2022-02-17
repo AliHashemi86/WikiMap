@@ -5,7 +5,7 @@
   justify-content: space-between;
   height: 5em;
   align-items: center;
-  background-color: $background;
+  background-color: whitesmoke;
   #logo {
     display: flex;
     max-height: 110px;
@@ -20,7 +20,7 @@
     display: flex;
     padding: 10px 15px;
     text-decoration: none;
-    color: white;
+    color: RGB(184, 149, 255);
   }
   #user-fill {
     margin: 0.67em;
@@ -36,7 +36,7 @@
   height: 100%;
   align-items: center;
   padding: 10px;
-  background-color: $background;
+  background-color: whitesmoke;
   #logo {
     display: flex;
     max-height: 110px;

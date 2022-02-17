@@ -23,6 +23,12 @@
     <main>
       <!-- **** Featured Maps Section Begins ****  -->
 
+      <section class="overlays">
+        <a href="/register">
+          <img id="cta" src="images/c2a.png" alt="" />
+        </a>
+      </section>
+
       <!-- Featured Map 1 -->
       <section class="featured-maps">
         <article id="feature-map-1">
@@ -107,8 +113,8 @@
 
     <script>
       const map = L.map("feature-map-1").setView(
-        [43.7507918304109, -79.58469815531056],
-        15
+        [52.50860292983873, 13.40307656705997],
+        10
       );
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
         attribution:
@@ -117,8 +123,8 @@
     </script>
     <script>
       const map2 = L.map("feature-map-2").setView(
-        [43.7507918304109, -89.58469815531056],
-        15
+        [35.983174283127845, 137.27585407758477],
+        5
       );
       map2.invalidateSize();
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
@@ -128,8 +134,8 @@
     </script>
     <script>
       const map3 = L.map("feature-map-3").setView(
-        [43.7507918304109, -79.58469815531056],
-        15
+        [40.801186402315956, -73.93988868864157],
+        11
       );
       map3.invalidateSize();
       L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {

@@ -33,8 +33,6 @@ module.exports = (db) => {
 
     return db.query(queryString, queryParams)
     .then((data) => {
-      // console.log('this update data',data)
-      // console.log(data.rows)
       const newMap = data.rows;
       res.redirect('/createMapPoints')
 
@@ -56,8 +54,6 @@ router.post("/", (req, res) => {
 
   return db.query(queryString, queryParams)
   .then((data) => {
-    // console.log('this update data',data)
-    // console.log(data.rows)
     const point = data.rows;
     res.redirect('/createMapPoints')
 
@@ -65,6 +61,5 @@ router.post("/", (req, res) => {
   })
   .catch(err => console.log(err));
 });
-
   return router;
 };

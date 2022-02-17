@@ -73,14 +73,14 @@
       '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors',
   }).addTo(map);
 
-  map.on("click", function (e) {
-    var lt = String(e.latlng.lat),
-      lg = String(e.latlng.lng);
-    var popup = L.popup()
-      .setLatLng(e.latlng)
-      .setContent(lt + " " + lg)
-      .openOn(map);
-  });
+  // map.on("click", function (e) {
+  //   var lt = String(e.latlng.lat),
+  //     lg = String(e.latlng.lng);
+  //   var popup = L.popup()
+  //     .setLatLng(e.latlng)
+  //     .setContent(lt + " " + lg)
+  //     .openOn(map);
+  // });
 
   // const buttonRemove =
   //   '<button type="button" class="remove">delete marker 💔</button>';
@@ -105,14 +105,14 @@
   // }
 
   //Search bar
-  $(".test-map").on("submit", function (e) {
-    e.preventDefault();
-    const title = $(this).find("input").val();
-    $.post("/api/mapPoints", { title }).then((resp) => {
-      console.log(resp);
-      for (const item of resp.maps) {
-        map.panTo(new L.LatLng(item.latitude, item.longitude));
-      }
-    });
-  });
-</script>
+  // $(".test-map").on("submit", function (e) {
+  //   e.preventDefault();
+  //   const title = $(this).find("input").val();
+  //   $.post("/api/mapPoints", { title }).then((resp) => {
+  //     console.log(resp);
+  //     for (const item of resp.maps) {
+  //       map.panTo(new L.LatLng(item.latitude, item.longitude));
+  //     }
+  //   });
+  //   // });
+

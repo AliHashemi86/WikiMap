@@ -10,12 +10,13 @@ module.exports = (db) => {
 
   router.post("/", (req, res) => {
     const queryString = `
-    SELECT email, password, name FROM users
+    SELECT email, password FROM users
     WHERE email = $1
     AND password = $2`
     ;
     const users = req.body;
     const queryParams = [users.email, users.password];
+
     req.session.users = users;
     return db
       .query(queryString, queryParams)

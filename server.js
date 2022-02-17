@@ -7,7 +7,7 @@ const sassMiddleware = require("./lib/sass-middleware");
 const express = require("express");
 const app = express();
 const morgan = require("morgan");
-const cookieSession = require('cookie-session');
+const cookieSession = require("cookie-session");
 //const session = require("express-session");
 
 const sessionConfig = {
@@ -34,10 +34,12 @@ db.connect();
 
 //app.use(session(sessionConfig));
 
-app.use(cookieSession({
-  name: 'session',
-  keys: ['key1', 'key2']
-}));
+app.use(
+  cookieSession({
+    name: "session",
+    keys: ["key1", "key2"],
+  })
+);
 
 app.use(morgan("dev"));
 
@@ -67,6 +69,7 @@ const pointsRoutes = require("./routes/points");
 const registerRoutes = require("./routes/register");
 const createMapRoutes = require("./routes/createMap");
 const logoutRoutes = require("./routes/logout");
+const profileRoutes = require("./routes/profile");
 
 // Mount all resource routes
 // Note: Feel free to replace the example routes below with your own
@@ -80,6 +83,7 @@ app.use("/new_map", new_mapRoutes(db));
 app.use("/api/mapPoints", mapPointsRoutes(db));
 app.use("/api/points", pointsRoutes(db));
 app.use("/createMap", createMapRoutes(db));
+app.use("/profile", profileRoutes(db));
 
 // Note: mount other resources here, using the same pattern above
 
@@ -88,7 +92,7 @@ app.use("/createMap", createMapRoutes(db));
 // Separate them into separate routes files (see above).
 
 app.get("/", (req, res) => {
-  res.render("index", {users:req.session.users});
+  res.render("index", { users: req.session.users });
 });
 
 app.listen(PORT, () => {

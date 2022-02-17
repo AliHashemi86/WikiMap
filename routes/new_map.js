@@ -27,7 +27,7 @@ module.exports = (db) => {
 
       .then((data) => {
         const maps = data.rows;
-        res.redirect("/new_map");
+        // res.redirect("/new_map");
         res.json({ maps });
       })
       .catch((err) => console.log(err));

@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
+    <!-- Bootstrap / added by Ali-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
     <!-- JavaScript -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -56,11 +60,13 @@
               <h6 class="theme-color lead">
                 A Lead UX &amp; UI designer based in Canada
               </h6> -->
+              <div class="profile-info">
               <div id="info">
-                <h3 id="infoDump"></h3>
+                <h4 id="infoDump"></h4>
                 <br>
-                <h2>Favorite Maps</h2>
-                <h3 id="favList"></h3>
+                <h3>Favorite Maps:</h3>
+                <h4 id="favList"></h4>
+              </div>
               </div>
               <!-- <p>
                 I <mark>design and develop</mark> services for customers of all
@@ -149,5 +155,7 @@
         </div>
       </div> -->
     </section>
+    <footer><%- include('partials/_footer')%></footer>
+
   </body>
 </html>

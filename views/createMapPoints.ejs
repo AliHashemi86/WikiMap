@@ -9,8 +9,14 @@
     <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
+    />
 
     <!-- JavaScript -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
@@ -38,16 +44,18 @@
 
     <h1 id="create-mp">Create Map Point</h1>
     <section>
-\      <form class="test-map" action="/createMapPoints" method="post">
+      \
+      <form class="test-map" action="/createMapPoints" method="post">
         <input name="title" placeholder="title" />
         <input name="image" placeholder="image URL" />
         <input name="description" placeholder="description" />
         <input name="latitude" placeholder="latitude" />
-        <input name="longitude" placeholder="longitude"/>
+        <input name="longitude" placeholder="longitude" />
         <button type="submit" class="btn btn-success">Submit</button>
         <!-- <button type="button" class="button" type="submit">Submit</button> -->
       </form>
     </section>
+    <section class="container"></section>
     <div style="height: 900px" id="maps-section2"></div>
 
     <!-- <div style="height: 900px" id="new-map"></div> -->
@@ -64,4 +72,12 @@
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors',
   }).addTo(map10);
+
+  map10.on("click", function (e) {
+    const markerPlace = document.querySelector(".container");
+    markerPlace.textContent = e.latlng;
+  });
+
+  const searchControl = new L.esri.Controls.Geosearch().addTo(map10);
+  const results = new L.LayerGroup().addTo(map10);
 </script>

@@ -9,8 +9,14 @@
     <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
     <!-- Bootstrap -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css"
+    />
 
     <!-- JavaScript -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
@@ -30,21 +36,54 @@
       integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
       crossorigin=""
     ></script>
+
+    <!-- Leaflet Esri Library -->
+    <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet/0.0.1-beta.5/esri-leaflet.js"></script>
+
+    <script src="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.js"></script>
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn-geoweb.s3.amazonaws.com/esri-leaflet-geocoder/0.0.1-beta.5/esri-leaflet-geocoder.css"
+    />
   </head>
 
   <body>
     <%- include('partials/_header')%>
     <section class="main">
-    <h1>Create Map</h1>
+      <h1>Create Map</h1>
       <form action="/createMap" method="post">
         <input name="titles" placeholder="title" />
         <input name="latitudes" placeholder="latitude" />
-        <input name="longitudes" placeholder="longitude"/>
+        <input name="longitudes" placeholder="longitude" />
         <button type="submit" class="btn btn-success">Submit</button>
         <!-- <button class="button" type="submit">Submit</button> -->
       </form>
     </section>
-    <div style="height: 900px" id="new-map"></div>
+    <section class="container"></section>
+
+    <div style="height: 900px" id="maps-section2"></div>
+
     <footer><%- include('partials/_footer')%></footer>
   </body>
 </html>
+<script>
+  const map = L.map("maps-section2").setView(
+    [43.7507918304109, -79.58469815531056],
+    13
+  );
+  L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors',
+  }).addTo(map);
+
+  map.on("click", function (e) {
+    const markerPlace = document.querySelector(".container");
+    markerPlace.textContent = e.latlng;
+  });
+
+  // Search bar
+  const searchControl = new L.esri.Controls.Geosearch().addTo(map);
+  const results = new L.LayerGroup().addTo(map);
+</script>

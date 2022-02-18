@@ -5,11 +5,12 @@
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 5em;
+  height: 6em;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   background-color: #d6d4d4;
+  padding: 15px;
 }
 
 .top-nav #logo {
@@ -58,8 +59,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 10px;
   background-color: #d6d4d4;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 .footer #logo {
@@ -73,6 +75,35 @@
   max-width: 110px;
 }
 
+body {
+  position: relative;
+}
+
+.overlays {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.overlays #cta {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute;
+  margin-left: 67%;
+  margin-top: 29%;
+  opacity: 95%;
+  z-index: 2;
+}
+
+.overlays #cta:hover {
+  opacity: 80%;
+}
+
 .featured-maps {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -82,6 +113,8 @@
           align-items: stretch;
   width: 100%;
   height: 85vh;
+  position: relative;
+  z-index: -1;
 }
 
 .featured-maps #feature-map-1 {
@@ -93,14 +126,13 @@
   display: flex;
   list-style: none;
   background-color: #f2fad1;
+  position: relative;
   margin: 0.7em;
   z-index: 1;
+  z-index: 0;
 }
 
 .featured-maps .feature-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-flex: 0;
       -ms-flex: 0 0 49vw;
           flex: 0 0 49vw;
@@ -111,22 +143,18 @@
   -webkit-box-flex: 1;
       -ms-flex-positive: 1;
           flex-grow: 1;
+  position: relative;
+  z-index: -1;
 }
 
 .featured-maps #feature-map-2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-          order: 2;
-  height: 100%;
-  width: 100%;
-  background-color: none;
   position: relative;
   margin-top: 0.7em;
   margin-right: 0.7em;
+  position: relative;
+  height: 50%;
+  width: 100%;
+  z-index: -1;
 }
 
 .featured-maps #feature-map-3 {
@@ -137,76 +165,14 @@
   -webkit-box-ordinal-group: 5;
       -ms-flex-order: 4;
           order: 4;
-  height: 100%;
+  height: 47.6%;
   width: 100%;
   background-color: #e2e7da;
   margin-top: 0.7em;
   margin-right: 0.7em;
   margin-bottom: 0.7em;
-}
-
-.mapapp-feature1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 20em;
-}
-
-.mapapp-feature1 .feature-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50vw;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  background-color: #cedde2;
-}
-
-.mapapp-feature1 .feature-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50vw;
-  background-color: #cbcaca;
-}
-
-.mapapp-feature2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-  height: 20em;
-  background-color: #f1ccec;
-}
-
-.mapapp-feature2 .feature-text {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50vw;
-  background-color: #cbcaca;
-}
-
-.mapapp-feature2 .feature-img {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 50vw;
-  background-color: #f0cbd4;
-}
-
-.c2a {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  width: 100%;
-  height: 20em;
-  background-color: #bdb6b6;
+  position: relative;
+  z-index: -1;
 }
 
 body {
@@ -245,19 +211,21 @@ body {
 
 .btn-facebook {
   color: white !important;
-  background-color: #3b5998;
+  background-color: #3b9879;
 }
 
-.intro {
+.form-control {
+  background-color: #a9d6a9;
+}
+
+.map-section {
   padding-top: 20px;
   padding-left: 10px;
-  margin-top: 20px;
   margin-left: 10px;
 }
 
-.test-map1 {
-  margin-top: 10px;
-  margin-left: 20px;
+.main {
+  margin: 30px 20px;
 }
 
 .main {

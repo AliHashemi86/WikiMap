@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
     <!-- JavaScript -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -32,15 +36,16 @@
 
   <body>
     <%- include('partials/_header')%>
-    <h1>Create Map Point</h1>
-    <section>
+    <section class="main">
+      <h1>Create Map Point</h1>
       <form class="test-map" action="/createMapPoints" method="post">
         <input name="title" placeholder="title" />
         <input name="image" placeholder="image URL" />
         <input name="description" placeholder="description" />
         <input name="latitude" placeholder="latitude" />
-        <input name="longitude" placeholder="longitude" />
-        <button type="submit">Submit</button>
+        <input name="longitude" placeholder="longitude"/>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <!-- <button type="button" class="button" type="submit">Submit</button> -->
       </form>
     </section>
     <div style="height: 900px" id="maps-section2"></div>

@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
     <!-- JavaScript -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -31,15 +35,18 @@
   <body>
     <header><%- include('partials/_header')%></header>
     <main>
-      <section>
-        <h4>Feel free to search for available maps in this list</h4>
+      <section class="map-section">
+        <h3>Feel free to search for available maps in this list</h3>
         <div class="mapName"></div>
       </section>
       <!-- Map Section -->
-      <form class="test-map">
-      <input type="text" name="title">
-      <button type="submit">Submit</button>
+      <div class="map-section">
+      <form class="test-map" >
+      <input type="text" name="title" placeholder="copy/paste here">
+      <button type="submit" class="btn btn-success">Submit</button>
+      <!-- <button class="button" type="submit" >Submit</button> -->
       </form>
+      </div>
 
       <main>
       <section class="container"></section>

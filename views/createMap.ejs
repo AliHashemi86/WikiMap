@@ -8,6 +8,10 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
     <!-- JavaScript -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -35,8 +39,9 @@
       <form action="/createMap" method="post">
         <input name="titles" placeholder="title" />
         <input name="latitudes" placeholder="latitude" />
-        <input name="longitudes" placeholder="longitude" />
-        <button type="submit">Sumbit</button>
+        <input name="longitudes" placeholder="longitude"/>
+        <button type="submit" class="btn btn-success">Submit</button>
+        <!-- <button class="button" type="submit">Submit</button> -->
       </form>
     </section>
     <div style="height: 900px" id="new-map"></div>

@@ -3,9 +3,10 @@
 .top-nav {
   display: flex;
   justify-content: space-between;
-  height: 5em;
+  height: 6em;
   align-items: center;
   background-color: $background;
+  padding: 15px;
   #logo {
     display: flex;
     max-height: 110px;
@@ -28,6 +29,11 @@
   #logout-btn {
     margin: 0.6em;
   }
+  // .button {
+  //   border-color: rgb(58, 155, 134);
+  //   background-color: rgb(129, 207, 190);
+  // }
+
 }
 
 .footer {
@@ -35,8 +41,10 @@
   justify-content: space-between;
   height: 100%;
   align-items: center;
-  padding: 10px;
   background-color: $background;
+  padding-right: 15px;
+  padding-left: 15px;
+
   #logo {
     display: flex;
     max-height: 110px;

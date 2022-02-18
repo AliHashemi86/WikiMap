@@ -8,6 +8,11 @@
     <link rel="stylesheet" href="/vendor/border-box.css" type="text/css" />
     <link rel="stylesheet" href="/dist/styles.css" type="text/css" />
 
+     <!-- Bootstrap -->
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+
+
     <!-- JavaScript -->
     <script type="text/javascript" src="/vendor/jquery-3.0.0.js"></script>
     <script type="text/javascript" src="/scripts/app.js"></script>
@@ -15,21 +20,21 @@
 
     <!-- bootstrap -->
 
-    <!-- Latest compiled and minified CSS -->
+    <!-- Latest compiled and minified CSS
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
       integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu"
       crossorigin="anonymous"
-    />
+    /> -->
 
-    <!-- Optional theme -->
+    <!-- Optional theme
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css"
       integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ"
       crossorigin="anonymous"
-    />
+    /> -->
 
     <!-- Latest compiled and minified JavaScript -->
     <script
@@ -50,9 +55,10 @@
             <div class="card border-0 shadow rounded-3 my-5">
               <div class="card-body p-4 p-sm-5">
                 <h5 class="card-title text-center mb-5 fw-light fs-5">
-                  Sign In
+                  Login
                 </h5>
                 <form action="/login" method="post">
+
                   <div class="form-floating mb-3">
                     <input
                       name="email"
@@ -63,7 +69,7 @@
                     />
                     <label for="floatingInput">Email address</label>
                   </div>
-                  <div class="form-floating mb-3">
+                  <div class="form-floating mb-4">
                     <input
                       name="password"
                       type="password"
@@ -86,12 +92,13 @@
                     </label>
                   </div>
                   <div class="d-grid">
-                    <button
+                    <!-- <button
                       class="btn btn-primary btn-login text-uppercase fw-bold"
                       type="submit"
                     >
                       Sign in
-                    </button>
+                    </button> -->
+                    <button type="submit" class="btn btn-success">Login</button>
                   </div>
 
                   </div>

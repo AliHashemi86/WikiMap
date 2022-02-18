@@ -29,8 +29,6 @@ router.post("/", (req, res) => {
 
   return db.query(queryString, queryParams)
   .then((data) => {
-    // console.log('this update data',data)
-    // console.log(data.rows)
     const point = data.rows;
     res.redirect('/createMapPoints')
 

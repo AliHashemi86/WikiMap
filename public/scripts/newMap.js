@@ -50,7 +50,6 @@ const mapMarkers2 = () => {
         </div>
             `, {maxWidth: "auto"}
           );
-          // marker.on("popupopen", deletePoint);
       }
     });
 };
@@ -58,11 +57,9 @@ const mapMarkers2 = () => {
 const deleteForm = () => {
   const popup  = document.getElementById("delete-forum");
   popup.style.display = "block";
-
 }
 
 const editForm = () => {
   const popup2  = document.getElementById("edit-forum");
   popup2.style.display = "block";
-
 }

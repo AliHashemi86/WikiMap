@@ -19,5 +19,35 @@ module.exports = (db) => {
           .json({ error: err.message });
       });
   });
+
+  router.post("/", (req, res) => {
+    const testFav = req.body;
+    console.log(testFav)
+    const queryString = `
+    INSERT INTO favorites (user_id, map_id)
+    VALUES($1, $2)
+    RETURNING *;
+    `;
+    const queryParams = [
+      1,
+      testFav.map_id
+    ];
+
+    return db
+      .query(queryString, queryParams)
+      .then(data => {
+        const addFav = data.rows;
+        res.redirect('/maps')
+        res.json({ addFav });
+      })
+      .catch(err => {
+        res
+          .status(500)
+          .json({ error: err.message });
+      });
+  });
+
+
 return router;
 };
+

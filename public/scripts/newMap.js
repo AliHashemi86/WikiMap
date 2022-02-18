@@ -24,39 +24,45 @@ const mapMarkers2 = () => {
           .addTo(map10)
           //Template added to marker
           .bindPopup(`
-            <p>Num: ${point.id}</p>
-            <h1>${point.title}</h1>
-            <image src="${point.image}">
-            <p>${point.description}</p>
-            <button type="button" class="remove-marker2">Delete</button>
-            <button onclick="popupForum()">Edit</button>
+          <p>Num: ${point.id}</p>
+          <h1>${point.title}</h1>
+          <image src="${point.image}">
+          <p>${point.description}</p>
 
-            <div id="edit-forum2" style="display:none">
-              <form action="/api/points" method="post">
-                <input name="id" placeholder="Number"/>
-                <input name="title" placeholder="title" />
-                <input name="image" placeholder="image URL" />
-                <input name="description" placeholder="description" />
-                <button type="submit">Submit</button>
-              </form>
-            </div>
+          <button onclick="editForm()">Edit</button>
+          <button onclick="deleteForm()" class="remove-marker">Delete</button>
+
+          <div id="edit-forum" style="display:none">
+            <form action="/api/points" method="post">
+              <input name="id" placeholder="Number"/>
+              <input name="title" placeholder="title" />
+              <input name="image" placeholder="image URL" />
+              <input name="description" placeholder="description" />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+
+          <div id="delete-forum" style="display:none">
+          <form action="/api/deletePoint" method="post">
+            <input name="id" placeholder="Number"/>
+            <button type="submit">Submit</button>
+          </form>
+        </div>
             `, {maxWidth: "auto"}
           );
-          marker.on("popupopen", deletePoint);
+          // marker.on("popupopen", deletePoint);
       }
     });
 };
 
-const popupForum = () => {
-  const popup  = document.getElementById("edit-forum2");
+const deleteForm = () => {
+  const popup  = document.getElementById("delete-forum");
   popup.style.display = "block";
+
 }
 
-// Remove marker function
-function deletePoint() {
-const marker = this;
-const removeButton = document.querySelector(".remove-marker2");
-removeButton.addEventListener("click", () => {
-  map.removeLayer(marker);
-});
+const editForm = () => {
+  const popup2  = document.getElementById("edit-forum");
+  popup2.style.display = "block";
+
 }

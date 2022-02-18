@@ -9,8 +9,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #d6d4d4;
-  padding: 15px;
+  background-color: whitesmoke;
 }
 
 .top-nav #logo {
@@ -37,7 +36,7 @@
   display: flex;
   padding: 10px 15px;
   text-decoration: none;
-  color: white;
+  color: RGB(184, 149, 255);
 }
 
 .top-nav #user-fill {
@@ -59,9 +58,8 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  background-color: #d6d4d4;
-  padding-right: 15px;
-  padding-left: 15px;
+  padding: 10px;
+  background-color: whitesmoke;
 }
 
 .footer #logo {
@@ -96,6 +94,9 @@ body {
   position: absolute;
   margin-left: 67%;
   margin-top: 29%;
+  max-height: -webkit-fit-content;
+  max-height: -moz-fit-content;
+  max-height: fit-content;
   opacity: 95%;
   z-index: 2;
 }
@@ -221,11 +222,43 @@ body {
 .map-section {
   padding-top: 20px;
   padding-left: 10px;
+  margin-top: 20px;
   margin-left: 10px;
 }
 
-.main {
-  margin: 30px 20px;
+.test-map {
+  text-align: center;
+}
+
+#maps-section {
+  max-width: 90vw;
+  max-height: 72vh;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5em;
+}
+
+.maps-db {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+#popup-img {
+  max-width: 20vw;
+  max-height: 20vh;
+}
+
+#maps-section2 {
+  max-width: 90vw;
+  max-height: 72vh;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5em;
+}
+
+#create-mp {
+  text-align: center;
 }
 
 .main {

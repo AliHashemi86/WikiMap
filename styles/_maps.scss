@@ -18,5 +18,25 @@
 .map-section {
   padding-top: 20px;
   padding-left: 10px;
-  margin-left: 10px
+
+  margin-top: 20px;
+  margin-left: 10px;
+}
+
+.test-map {
+  text-align: center;
+}
+
+#maps-section {
+  max-width: 90vw;
+  max-height: 72vh;
+
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5em;
+}
+
+.maps-db {
+  text-align: center;
+  margin-bottom: 1em;
 }

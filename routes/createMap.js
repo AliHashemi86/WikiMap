@@ -6,6 +6,7 @@ module.exports = (db) => {
   router.get("/", (req, res) => {
     res.render("createMap", {users:req.session.users});
   });
+
   // MAP//
   router.post('/', (req, res) => {
     const newMap = req.body;
@@ -27,7 +28,6 @@ module.exports = (db) => {
         console.log(data.rows);
         const newMap = data.rows;
         res.redirect('/createMapPoints');
-
         res.json({ newMap });
       })
       .catch(err => console.log(err));

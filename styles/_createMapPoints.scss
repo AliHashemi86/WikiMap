@@ -1,12 +1,17 @@
-.main {
-  margin: 30px 20px
+#popup-img {
+  max-width: 20vw;
+  max-height: 20vh;
 }
 
-// .test-map {
-//   margin: 20px
-// }
+#maps-section2 {
+  max-width: 90vw;
+  max-height: 72vh;
+  margin-top: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2.5em;
+}
 
-// .button {
-//   border-color: rgb(58, 155, 134);
-//   background-color: rgb(129, 207, 190);
-// }
+#create-mp {
+  text-align: center;
+}

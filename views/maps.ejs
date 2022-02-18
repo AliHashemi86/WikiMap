@@ -42,13 +42,23 @@
       </section>
       <!-- Map Section -->
       <div class="map-section">
-      <form class="test-map" >
-      <input type="text" name="title" placeholder="copy/paste here">
-      <button type="submit" class="btn btn-success">Submit</button>
-      <!-- <button class="button" type="submit" >Submit</button> -->
-      </form>
-      </div>
+        <form class="test-map" >
+          <input type="text" name="title" placeholder="copy/paste here">
+          <button type="submit" class="btn btn-success">Submit</button>
+        </form>
 
+        <form action="/api/favorites" method="post" >
+          <input class="fav"  type="text" name="map_id" placeholder="Map Number">
+          <button type="submit" class="btn btn-success">Favorite</button>
+        </form>
+      </div>
+        <!-- Add favorite form -->
+        <!-- <section class="favorite-section">
+          <form  action="/api/favorites" method="post" >
+            <input class="maps-input" type="text" name="map_id" placeholder="Map Number">
+            <button type="submit" class="btn btn-success">Favorite</button>
+          </form>
+        </section> -->
       <main>
       <section class="container"></section>
       <section>
@@ -60,15 +70,18 @@
   </body>
 </html>
 <script>
+
+
 ///Map
   const map = L.map("maps-section").setView(
     [43.7507918304109, -79.58469815531056],
-    15
+    13
   );
   L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
     attribution:
       '&copy; <a href="https://www.openstreetmap.org/copyright%22%3EOpenStreetMap</a> contributors',
   }).addTo(map);
+
   //Search bar
   $('.test-map').on('submit', function(e) {
     e.preventDefault();
